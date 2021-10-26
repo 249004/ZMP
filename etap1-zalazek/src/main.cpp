@@ -11,33 +11,63 @@ int main()
 {
   void *pLibHnd_Move = dlopen("libInterp4Move.so",RTLD_LAZY);
   Interp4Command *(*pCreateCmd_Move)(void);
-  void *pFun;
+  void *pFunMove;
+
+  void *pLibHnd_Second = dlopen("libInterp4Second.so",RTLD_LAZY);
+  Interp4Command *(*pCreateCmd_Second)(void);
+  void *pFunSecond;
+
 
   if (!pLibHnd_Move) {
     cerr << "!!! Brak biblioteki: Interp4Move.so" << endl;
     return 1;
   }
 
+  if (!pLibHnd_Second) {
+    cerr << "!!! Brak biblioteki: Interp4Second.so" << endl;
+    return 1;
+  }
 
-  pFun = dlsym(pLibHnd_Move,"CreateCmd");
-  if (!pFun) {
+
+  pFunMove = dlsym(pLibHnd_Move,"CreateCmd");
+  if (!pFunMove) {
     cerr << "!!! Nie znaleziono funkcji CreateCmd" << endl;
     return 1;
   }
-  pCreateCmd_Move = *reinterpret_cast<Interp4Command* (**)(void)>(&pFun);
 
+  pFunSecond = dlsym(pLibHnd_Second,"CreateCmd");
+  if (!pFunSecond) {
+    cerr << "!!! Nie znaleziono funkcji CreateCmd" << endl;
+    return 1;
+  }
 
-  Interp4Command *pCmd = pCreateCmd_Move();
+  pCreateCmd_Move = *reinterpret_cast<Interp4Command* (**)(void)>(&pFunMove);
+  pCreateCmd_Second = *reinterpret_cast<Interp4Command* (**)(void)>(&pFunSecond);
+
+  Interp4Command *pCmdMove = pCreateCmd_Move();
+  Interp4Command *pCmdSecond = pCreateCmd_Second();
 
   cout << endl;
-  cout << pCmd->GetCmdName() << endl;
+  cout << pCmdMove->GetCmdName() << endl;
   cout << endl;
-  pCmd->PrintSyntax();
+  pCmdMove->PrintSyntax();
   cout << endl;
-  pCmd->PrintCmd();
+  pCmdMove->PrintCmd();
   cout << endl;
   
-  delete pCmd;
+  cout << endl;
+  cout << pCreateCmd_Second->GetCmdName() << endl;
+  cout << endl;
+  pCreateCmd_Second->PrintSyntax();
+  cout << endl;
+  pCreateCmd_Second->PrintCmd();
+  cout << endl;
+
+  delete pCmdMove;
+  delete pCreateCmd_Second;
 
   dlclose(pLibHnd_Move);
+  dlclose(pLibHnd_Second);
+
+
 }
