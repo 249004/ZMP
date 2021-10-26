@@ -1,73 +1,101 @@
 #include <iostream>
 #include <dlfcn.h>
 #include <cassert>
+#include <cstdio>
+#include <sstream>
 #include "Interp4Command.hh"
 #include "MobileObj.hh"
 
+#define LINE_SIZE 500
+
 using namespace std;
 
+bool ExecPreprocessor(const char *NazwaPliku, istringstream &IStrm4Cmds)
+{
+  string Cmd4Preproc = "cpp -P ";
+  char Line[LINE_SIZE];
+  ostringstream OTmpStrm;
+
+  Cmd4Preproc += NazwaPliku;
+  FILE* pProc = popen(Cmd4Preproc.c_str(),"r");
+
+  if (!pProc) return false;
+
+  while (fgets(Line, LINE_SIZE, pProc))
+  {
+    OTmpStrm << Line;
+  }
+
+  IStrm4Cmds.str(OTmpStrm.str());
+  return pclose(pProc) == 0;
+}
 
 int main()
 {
   void *pLibHnd_Move = dlopen("libInterp4Move.so",RTLD_LAZY);
   Interp4Command *(*pCreateCmd_Move)(void);
-  void *pFunMove;
+  void *pFun;
 
-  void *pLibHnd_Second = dlopen("libInterp4Second.so",RTLD_LAZY);
-  Interp4Command *(*pCreateCmd_Second)(void);
-  void *pFunSecond;
-
+  void *pLibHnd_Set= dlopen("libInterp4Set.so",RTLD_LAZY);
+  Interp4Command *(*pCreateCmd_Set)(void);
 
   if (!pLibHnd_Move) {
     cerr << "!!! Brak biblioteki: Interp4Move.so" << endl;
     return 1;
   }
 
-  if (!pLibHnd_Second) {
-    cerr << "!!! Brak biblioteki: Interp4Second.so" << endl;
+  if (!pLibHnd_Set) {
+    cerr << "!!! Brak biblioteki: Interp4Set.so" << endl;
     return 1;
   }
 
 
-  pFunMove = dlsym(pLibHnd_Move,"CreateCmd");
-  if (!pFunMove) {
+  pFun = dlsym(pLibHnd_Move,"CreateCmd");
+  if (!pFun) {
     cerr << "!!! Nie znaleziono funkcji CreateCmd" << endl;
     return 1;
   }
+  pCreateCmd_Move = *reinterpret_cast<Interp4Command* (**)(void)>(&pFun);
 
-  pFunSecond = dlsym(pLibHnd_Second,"CreateCmd");
-  if (!pFunSecond) {
+  pFun = dlsym(pLibHnd_Set,"CreateCmd");
+  if (!pFun) {
     cerr << "!!! Nie znaleziono funkcji CreateCmd" << endl;
     return 1;
   }
+  pCreateCmd_Set = *reinterpret_cast<Interp4Command* (**)(void)>(&pFun);
 
-  pCreateCmd_Move = *reinterpret_cast<Interp4Command* (**)(void)>(&pFunMove);
-  pCreateCmd_Second = *reinterpret_cast<Interp4Command* (**)(void)>(&pFunSecond);
 
-  Interp4Command *pCmdMove = pCreateCmd_Move();
-  Interp4Command *pCmdSecond = pCreateCmd_Second();
+
+  Interp4Command *pCmd = pCreateCmd_Move();
+
 
   cout << endl;
-  cout << pCmdMove->GetCmdName() << endl;
+  cout << pCmd->GetCmdName() << endl;
   cout << endl;
-  pCmdMove->PrintSyntax();
+  pCmd->PrintSyntax();
   cout << endl;
-  pCmdMove->PrintCmd();
+  pCmd->PrintCmd();
   cout << endl;
   
+  pCmd = pCreateCmd_Set();
+
   cout << endl;
-  cout << pCreateCmd_Second->GetCmdName() << endl;
+  cout << pCmd->GetCmdName() << endl;
   cout << endl;
-  pCreateCmd_Second->PrintSyntax();
+  pCmd->PrintSyntax();
   cout << endl;
-  pCreateCmd_Second->PrintCmd();
+  pCmd->PrintCmd();
   cout << endl;
 
-  delete pCmdMove;
-  delete pCreateCmd_Second;
+  delete pCmd;
 
   dlclose(pLibHnd_Move);
-  dlclose(pLibHnd_Second);
+  dlclose(pLibHnd_Set);
+
+  istringstream strumien;
+  ExecPreprocessor("program_dzialan.cmd",strumien);
+
+  cout<< endl << strumien.str();
 
 
 }

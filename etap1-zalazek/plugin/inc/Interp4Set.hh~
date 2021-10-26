@@ -1,5 +1,5 @@
-#ifndef  COMMAND4SECOND_HH
-#define  COMMAND4SECOND_HH
+#ifndef  COMMAND4SET_HH
+#define  COMMAND4SET_HH
 
 #ifndef __GNUG__
 # pragma interface
@@ -10,9 +10,9 @@
 
 /*!
  * \file
- * \brief Definicja klasy Interp4Second
+ * \brief Definicja klasy Interp4Set
  *
- * Plik zawiera definicję klasy Interp4Second ...
+ * Plik zawiera definicję klasy Interp4Set ...
  */
 
 /*!
@@ -31,7 +31,7 @@ class Interp4Move: public Interp4Command {
   /*!
    * \brief
    */
-  Interp4Second();  
+  Interp4Set();  
   /*!
    * \brief Wyświetla postać bieżącego polecenia (nazwę oraz wartości parametrów)
    */
