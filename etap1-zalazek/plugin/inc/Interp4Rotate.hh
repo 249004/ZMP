@@ -1,5 +1,5 @@
-#ifndef  COMMAND4SET_HH
-#define  COMMAND4SET_HH
+#ifndef  COMMAND4ROTATE_HH
+#define  COMMAND4ROTATE_HH
 
 #ifndef __GNUG__
 # pragma interface
@@ -10,17 +10,18 @@
 
 /*!
  * \file
- * \brief Definicja klasy Interp4Set
+ * \brief Definicja klasy Interp4Rotate
  *
- * Plik zawiera definicję klasy Interp4Set ...
+ * Plik zawiera definicję klasy Interp4Rotate ...
  */
 
 /*!
- * \brief Modeluje polecenie dla robota mobilnego, które ustawia wybrany obiekt na scenie
+ * \brief Modeluje polecenie dla robota mobilnego, które zmienia orientację wybranego obiektu 
  *
- *  Klasa modeluje polecenie, które ustawia wybrany obiekt w zadanym miejscu na scenie.
+ *  Klasa modeluje polecenie, które odpowiada za zmianę orientacji wybranego obiektu 
+ *  poprzez obrót w okół zadanej własnej osi
  */
-class Interp4Set: public Interp4Command {
+class Interp4Rotate: public Interp4Command {
   /*
    *  Tu należy zdefiniować pola, które są niezbędne
    *  do przechowywania wartości parametrów danego polecenia.
@@ -31,7 +32,7 @@ class Interp4Set: public Interp4Command {
   /*!
    * \brief
    */
-  Interp4Set();  
+  Interp4Rotate();  
   /*!
    * \brief Wyświetla postać bieżącego polecenia (nazwę oraz wartości parametrów)
    */

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Interp4Set.hh"
+#include "Interp4Pause.hh"
 #include "MobileObj.hh"
 
 using std::cout;
@@ -21,21 +21,21 @@ extern "C" {
  */
 Interp4Command* CreateCmd(void)
 {
-  return Interp4Set::CreateCmd();
+  return Interp4Pause::CreateCmd();
 }
 
 
 /*!
  *
  */
-Interp4Set::Interp4Set(): _Speed_mmS(0)
+Interp4Pause::Interp4Pause(): _Speed_mmS(0)
 {}
 
 
 /*!
  *
  */
-void Interp4Set::PrintCmd() const
+void Interp4Pause::PrintCmd() const
 {
   /*
    *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
@@ -47,7 +47,7 @@ void Interp4Set::PrintCmd() const
 /*!
  *
  */
-const char* Interp4Set::GetCmdName() const
+const char* Interp4Pause::GetCmdName() const
 {
   return ::GetCmdName();
 }
@@ -56,7 +56,7 @@ const char* Interp4Set::GetCmdName() const
 /*!
  *
  */
-bool Interp4Set::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
+bool Interp4Pause::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
 {
   /*
    *  Tu trzeba napisać odpowiedni kod.
@@ -68,7 +68,7 @@ bool Interp4Set::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
 /*!
  *
  */
-bool Interp4Set::ReadParams(std::istream& Strm_CmdsList)
+bool Interp4Pause::ReadParams(std::istream& Strm_CmdsList)
 {
   /*
    *  Tu trzeba napisać odpowiedni kod.
@@ -80,16 +80,16 @@ bool Interp4Set::ReadParams(std::istream& Strm_CmdsList)
 /*!
  *
  */
-Interp4Command* Interp4Set::CreateCmd()
+Interp4Command* Interp4Pause::CreateCmd()
 {
-  return new Interp4Set();
+  return new Interp4Pause();
 }
 
 
 /*!
  *
  */
-void Interp4Set::PrintSyntax() const
+void Interp4Pause::PrintSyntax() const
 {
-  cout << "   Set  NazwaObiektu  Wsp_X  Wsp_Y Kat_OX[stopnie] Kat_OY[stopnie] Kat_OZ[stopnie]" << endl;
+  cout << "   Pause Czas_pauzy[ms]"<< endl;
 }

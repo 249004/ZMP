@@ -1,5 +1,5 @@
-#ifndef  COMMAND4SET_HH
-#define  COMMAND4SET_HH
+#ifndef  COMMAND4PAUSE_HH
+#define  COMMAND4PAUSE_HH
 
 #ifndef __GNUG__
 # pragma interface
@@ -10,17 +10,17 @@
 
 /*!
  * \file
- * \brief Definicja klasy Interp4Set
+ * \brief Definicja klasy Interp4Pause
  *
- * Plik zawiera definicję klasy Interp4Set ...
+ * Plik zawiera definicję klasy Interp4Pause ...
  */
 
 /*!
- * \brief Modeluje polecenie dla robota mobilnego, które ustawia wybrany obiekt na scenie
+ * \brief Modeluje polecenie zawieszenia działania wątku interpretera
  *
- *  Klasa modeluje polecenie, które ustawia wybrany obiekt w zadanym miejscu na scenie.
+ *  Klasa modeluje polecenie, które zawiesza działanie danego wątku interpretera na wybrany czas.
  */
-class Interp4Set: public Interp4Command {
+class Interp4Pause: public Interp4Command {
   /*
    *  Tu należy zdefiniować pola, które są niezbędne
    *  do przechowywania wartości parametrów danego polecenia.
@@ -31,7 +31,7 @@ class Interp4Set: public Interp4Command {
   /*!
    * \brief
    */
-  Interp4Set();  
+  Interp4Pause();  
   /*!
    * \brief Wyświetla postać bieżącego polecenia (nazwę oraz wartości parametrów)
    */

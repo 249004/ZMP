@@ -39,6 +39,12 @@ int main()
   void *pLibHnd_Set= dlopen("libInterp4Set.so",RTLD_LAZY);
   Interp4Command *(*pCreateCmd_Set)(void);
 
+  void *pLibHnd_Rotate= dlopen("libInterp4Rotate.so",RTLD_LAZY);
+  Interp4Command *(*pCreateCmd_Rotate)(void);
+
+  void *pLibHnd_Pause= dlopen("libInterp4Pause.so",RTLD_LAZY);
+  Interp4Command *(*pCreateCmd_Pause)(void);
+
   if (!pLibHnd_Move) {
     cerr << "!!! Brak biblioteki: Interp4Move.so" << endl;
     return 1;
@@ -46,6 +52,16 @@ int main()
 
   if (!pLibHnd_Set) {
     cerr << "!!! Brak biblioteki: Interp4Set.so" << endl;
+    return 1;
+  }
+
+  if (!pLibHnd_Rotate) {
+    cerr << "!!! Brak biblioteki: Interp4Rotate.so" << endl;
+    return 1;
+  }
+
+  if (!pLibHnd_Pause) {
+    cerr << "!!! Brak biblioteki: Interp4Pause.so" << endl;
     return 1;
   }
 
@@ -64,6 +80,19 @@ int main()
   }
   pCreateCmd_Set = *reinterpret_cast<Interp4Command* (**)(void)>(&pFun);
 
+  pFun = dlsym(pLibHnd_Rotate,"CreateCmd");
+  if (!pFun) {
+    cerr << "!!! Nie znaleziono funkcji CreateCmd" << endl;
+    return 1;
+  }
+  pCreateCmd_Rotate = *reinterpret_cast<Interp4Command* (**)(void)>(&pFun);
+
+  pFun = dlsym(pLibHnd_Pause,"CreateCmd");
+  if (!pFun) {
+    cerr << "!!! Nie znaleziono funkcji CreateCmd" << endl;
+    return 1;
+  }
+  pCreateCmd_Pause = *reinterpret_cast<Interp4Command* (**)(void)>(&pFun);
 
 
   Interp4Command *pCmd = pCreateCmd_Move();
@@ -77,7 +106,30 @@ int main()
   pCmd->PrintCmd();
   cout << endl;
   
+
   pCmd = pCreateCmd_Set();
+
+  cout << endl;
+  cout << pCmd->GetCmdName() << endl;
+  cout << endl;
+  pCmd->PrintSyntax();
+  cout << endl;
+  pCmd->PrintCmd();
+  cout << endl;
+
+
+  pCmd = pCreateCmd_Rotate();
+
+  cout << endl;
+  cout << pCmd->GetCmdName() << endl;
+  cout << endl;
+  pCmd->PrintSyntax();
+  cout << endl;
+  pCmd->PrintCmd();
+  cout << endl;
+
+
+  pCmd = pCreateCmd_Pause();
 
   cout << endl;
   cout << pCmd->GetCmdName() << endl;
@@ -91,6 +143,8 @@ int main()
 
   dlclose(pLibHnd_Move);
   dlclose(pLibHnd_Set);
+  dlclose(pLibHnd_Rotate);
+  dlclose(pLibHnd_Pause);
 
   istringstream strumien;
   ExecPreprocessor("program_dzialan.cmd",strumien);
