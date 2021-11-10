@@ -6,16 +6,35 @@
 
 using namespace std;
 
-typedef map<string, shared_ptr<MobileObj>> SetMobileObj;
+/*!                                                                             
+ * \file                                                                        
+ * \brief Scena na której pojawiają się obiekty                              
+ *                                                                              
+ * Klasa opcjonalna, która jest sceną, na której to mogą pojawić się obiekty                                                                                                                           
+ *                                                                              
+ */
+
+
+typedef map<string, shared_ptr<MobileObj>> Mobile_Obj;
 
 class Scene
-{
-    SetMobileObj mob_obj;
+{   
+  /*! \brief Obiekt mobilny pojawiający się na scenie 
+   *  
+   */
+  Mobile_Obj mob_obj;
 
-    public:
-      Scene();
-      ~Scene();
+  public:
+    Scene();
+    ~Scene();
 
-      shared_ptr<MobileObj> FindMobileObj(string pMobObj);
-      void AddMobileObj(MobileObj *pMobObj);
+    /*! \brief Funkcja wyszukująca obiekt
+     *  
+     */
+    shared_ptr<MobileObj> FindMobileObj(string pMobObj);
+
+    /*! \brief Funkcja dodająca obiekt
+     *  
+     */
+    void AddMobileObj(MobileObj *pMobObj);
 };

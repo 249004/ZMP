@@ -15,9 +15,10 @@
 
 using namespace std;
 
-/*! Uruchomienie preprocesora
+/*! \brief Uruchomienie preprocesora
  *  
- *
+ * \param NazwaPliku nazwa wczytywanego pliku poleceń
+ * \param IStrm4Cmds podawany strumień 
  */
 bool ExecPreprocessor(string NazwaPliku, istringstream &IStrm4Cmds)
 {
@@ -39,7 +40,12 @@ bool ExecPreprocessor(string NazwaPliku, istringstream &IStrm4Cmds)
   return pclose(pProc) == 0;
 }
 
-
+/*! \brief Uruchomienie podanego pliku poleceń 
+ *  
+ * Funkcja uruchamia podany plik poleceń oraz sprawdza poprawność kolejno wykonywanych kroków.
+ * Jeśli wszystko się powiedzie zostanie wykonana operacja oraz zostaną wyświetlone parametry działania.
+ * \param file_name nazwa wczytywanego pliku poleceń 
+ */
 bool ExecProgram(string file_name)
 {
   Set4LibInterf lib;
@@ -56,14 +62,15 @@ bool ExecProgram(string file_name)
   {
     in_stream >> object_name;
 
-    auto library = lib.find(command_name); //szukanie pluginu
+    //przemyslec auto
+    auto library = lib.find(command_name); //szukanie pluginu; auto pozwala na inicjalizacje czegos czego normalnie nie bylibysmy w stanie zainicjalizowac; jesli typ wyrazenia zostanie zmieniony to zmieniony zostanie rowniez typ zwracany
     if (library == nullptr) {//sprawdzenie poprawnosci
       cout << "Komenda " << command_name <<  " nie została znaleziona" << endl;
       return false;
     }
 
     auto command = library->create_cmd(); //tworzenie interpretera
-    if(false == command->ReadParams(in_stream)) { //wczytywanie parametrów i sprawdzenie poprawnosci
+    if(command->ReadParams(in_stream) == false) { //wczytywanie parametrów i sprawdzenie poprawnosci
       cout << "Nie udało się wczytać parametrów" << endl;
       delete command;
       return false;
@@ -76,7 +83,7 @@ bool ExecProgram(string file_name)
       return false;
     }
 
-    command->PrintCmd();
+    command->PrintCmd(); //wypisywanie parametrów
     command->ExecCmd(object.get(), 0); //jesli wszystko poszlo dobrze wykona się operacja
     delete command;
   }

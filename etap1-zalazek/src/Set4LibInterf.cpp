@@ -2,9 +2,6 @@
 
 using namespace std; 
 
-/*! Konstruktor Set4LibInterf
- * 
- */
 Set4LibInterf::Set4LibInterf()
 {
   add_library("libs/libInterp4Move.so");
@@ -13,15 +10,13 @@ Set4LibInterf::Set4LibInterf()
   add_library("libs/libInterp4Pause.so");
 }
 
-
-/*! Destruktor Set4LibInterf
- * 
- */
 Set4LibInterf::~Set4LibInterf() {}
 
   
-/*! Funkcja odpowiada za dodawanie biblioteki 
- *  
+/*! \brief Funkcja odpowiada za dodawanie biblioteki 
+ *  Dodawanie biblioteki, która znajduje się pod podaną ścieżką
+ * 
+ * \param path ścieżka pod którą znajduje się biblioteka
  */
 void Set4LibInterf::add_library(string path) 
 {
@@ -29,8 +24,10 @@ void Set4LibInterf::add_library(string path)
   this->map_library.insert({library_ptr->library_name, library_ptr});
 }
 
-/*! Funkcja odpowiada za wyszukiwanie biblioteki 
- * 
+/*! \brief Funkcja odpowiada za wyszukiwanie biblioteki 
+ * Funkcja wyszukuje bibliotekę oraz sprawdza poprawność wykonanej operacji
+ *
+ * \param library_name nazwa szukanej biblioteki
  */
 shared_ptr<LibInterf> Set4LibInterf::find(string library_name) 
 {

@@ -5,16 +5,35 @@
 
 using namespace std;
 
-typedef map<string, shared_ptr<LibInterf>> LipMapInterf; //mapowanie
+/*!                                                                             
+ * \file                                                                        
+ * \brief Klasa, która pozwala na wyszukiwanie i dodawanie bibliotek                            
+ *                                                                              
+ * Klasa przechowująca ścieżki do bibliotek, pozwala na ich wyszukiwanie oraz dodawanie.                                                                                                                         
+ *                                                                              
+ */
+
+typedef map<string, shared_ptr<LibInterf>> LibMapInterf; //mapowanie
 
 class Set4LibInterf
 {
-    LipMapInterf map_library;
+    /*! \brief Zmapowana biblioteka
+     *  
+     */
+    LibMapInterf map_library;
 
     public:
 
         Set4LibInterf();
         ~Set4LibInterf();
+
+        /*! \brief Dodawanie biblioteki 
+         *  
+         */
         void add_library(string path);
+
+        /*! \brief Wyszukiwanie biblioteki 
+         *  
+         */
         shared_ptr<LibInterf> find(string name);
 };

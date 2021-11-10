@@ -37,9 +37,6 @@ Interp4Move::Interp4Move(): _Speed_mmS(0), road_length(0)
  */
 void Interp4Move::PrintCmd() const
 {
-  /*
-   *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
-   */
   cout << GetCmdName() << " Obj_A " << _Speed_mmS  << " " << road_length << endl;
 }
 
@@ -73,8 +70,6 @@ bool Interp4Move::ReadParams(std::istream& Strm_CmdsList)
 
   Strm_CmdsList >> _Speed_mmS >> road_length;
   return !Strm_CmdsList.fail();
-
-  return true;
 }
 
 

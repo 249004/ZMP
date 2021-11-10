@@ -14,6 +14,11 @@ LibInterf::~LibInterf()
     dlclose(this->handler);
 }
 
+/*! \brief Zaladowanie biblioteki z podanej ścieżki
+ *   
+ * Załadowanie biblioteki na podstawie podanej ścieżki oraz sprawdzenie poprawności operacji 
+ * \param path ścieżka do biblioteki
+ */
 bool LibInterf::library_load(string path)  //zaladowanie biblioteki
 {
     this->handler = dlopen(path.c_str(), RTLD_LAZY);
@@ -28,6 +33,10 @@ bool LibInterf::library_load(string path)  //zaladowanie biblioteki
 
 }
 
+/*! \brief Inicjalizacja biblioteki 
+ *  
+ * Zainicjalizowanie biblioteki 
+ */
 bool LibInterf::library_init() //inicjalizacja biblioteki
 {
     void *new_command = dlsym(this->handler, "CreateCmd");

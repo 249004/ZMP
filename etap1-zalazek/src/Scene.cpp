@@ -4,6 +4,9 @@ Scene::Scene(){}
 
 Scene::~Scene(){}
 
+/*! \brief Funkcja wyszukująca obiekt
+  * Funkcja pozwalająca na wyszukiwanie obiektu 
+  */
 shared_ptr<MobileObj> Scene::FindMobileObj(string pMobObj) 
 {
   auto it = this->mob_obj.find(pMobObj);
