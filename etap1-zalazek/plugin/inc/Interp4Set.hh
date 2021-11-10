@@ -26,7 +26,12 @@ class Interp4Set: public Interp4Command {
    *  do przechowywania wartości parametrów danego polecenia.
    *  Ponieżej zdefiniowane jest tylko jedno pole jako przykład.
    */
-  double  _Speed_mmS;
+  double  x;
+  double y;
+  double OX;
+  double OY;
+  double OZ;
+  
  public:
   /*!
    * \brief

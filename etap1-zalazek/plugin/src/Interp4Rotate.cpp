@@ -8,7 +8,7 @@ using std::endl;
 
 extern "C" {
  Interp4Command* CreateCmd(void);
-  const char* GetCmdName() { return "Set"; }
+  const char* GetCmdName() { return "Rotate"; }
 }
 
 
@@ -28,7 +28,7 @@ Interp4Command* CreateCmd(void)
 /*!
  *
  */
-Interp4Rotate::Interp4Rotate(): _Speed_mmS(0)
+Interp4Rotate::Interp4Rotate(): ang_speed(0), axis(""), rot_angle(0)
 {}
 
 
@@ -40,7 +40,7 @@ void Interp4Rotate::PrintCmd() const
   /*
    *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
    */
-  cout << GetCmdName() << " Obj_A " << _Speed_mmS  << " 10" << endl;
+  cout << GetCmdName() << " Obj_A " << ang_speed  << " " << axis << " " << rot_angle << endl;
 }
 
 
@@ -65,15 +65,15 @@ bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
 }
 
 
-/*!
+/*! wczytywanie parametrów
  *
  */
 bool Interp4Rotate::ReadParams(std::istream& Strm_CmdsList)
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
-  return true;
+
+  Strm_CmdsList >> ang_speed >> axis >> rot_angle;
+  return !Strm_CmdsList.fail();
+
 }
 
 

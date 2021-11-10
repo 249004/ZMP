@@ -1,5 +1,5 @@
-__start__: obj __lines_for_space__ interp __plugin__
-	export LD_LIBRARY_PATH="./libs"; ./interp
+__start__: obj interp __plugin__
+	export LD_LIBRARY_PATH="./libs"
 
 obj:
 	mkdir obj
@@ -16,17 +16,28 @@ __lines_for_space__:
 __plugin__:
 	cd plugin; make
 
-CPPFLAGS=-Wall -pedantic -std=c++17 -iquote inc
-LDFLAGS=-Wall
+CPPFLAGS=-Wall -g -pedantic -std=c++17 -iquote  inc
+LDFLAGS=-Wall -g
 
 
 
 
-interp: obj/main.o
-	g++ ${LDFLAGS} -o interp  obj/main.o -ldl
+interp: obj/main.o obj/LibInterf.o obj/Scene.o obj/Set4LibInterf.o 
+	g++ ${LDFLAGS} -o interp  obj/main.o obj/LibInterf.o obj/Scene.o obj/Set4LibInterf.o -ldl
 
-obj/main.o: src/main.cpp inc/Interp4Command.hh
+obj/main.o: src/main.cpp inc/MobileObj.hh inc/Set4LibInterf.hh inc/Scene.hh
 	g++ -c ${CPPFLAGS} -o obj/main.o src/main.cpp
+
+obj/LibInterf.o: src/LibInterf.cpp inc/LibInterf.hh
+	g++ -c ${CPPFLAGS} -o obj/LibInterf.o src/LibInterf.cpp
+
+obj/Set4LibInterf.o: src/Set4LibInterf.cpp inc/Set4LibInterf.hh
+	g++ -c ${CPPFLAGS} -o obj/Set4LibInterf.o src/Set4LibInterf.cpp
+
+
+obj/Scene.o: src/Scene.cpp inc/Scene.hh
+	g++ -c ${CPPFLAGS} -o obj/Scene.o src/Scene.cpp
+
 
 clean:
 	rm -f obj/* interp core*

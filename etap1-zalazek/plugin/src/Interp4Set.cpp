@@ -28,7 +28,7 @@ Interp4Command* CreateCmd(void)
 /*!
  *
  */
-Interp4Set::Interp4Set(): _Speed_mmS(0)
+Interp4Set::Interp4Set(): x(0), y(0), OX(0), OY(0), OZ(0)
 {}
 
 
@@ -40,7 +40,7 @@ void Interp4Set::PrintCmd() const
   /*
    *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
    */
-  cout << GetCmdName() << " Obj_A " << _Speed_mmS  << " 10" << endl;
+  cout << GetCmdName() << " Obj_A " << x << " " << y << " " << OX << "" << OY << " " << OZ << endl;
 }
 
 
@@ -65,15 +65,13 @@ bool Interp4Set::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
 }
 
 
-/*!
+/*! wczytywanie parametrów
  *
  */
 bool Interp4Set::ReadParams(std::istream& Strm_CmdsList)
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
-  return true;
+  Strm_CmdsList >> x >> y >> OX >> OY >> OZ;
+  return !Strm_CmdsList.fail();
 }
 
 
