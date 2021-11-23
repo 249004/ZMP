@@ -22,10 +22,10 @@ LDFLAGS=-Wall -g
 
 
 
-interp: obj/main.o obj/LibInterf.o obj/Scene.o obj/Set4LibInterf.o 
-	g++ ${LDFLAGS} -o interp  obj/main.o obj/LibInterf.o obj/Scene.o obj/Set4LibInterf.o -ldl
+interp: obj/main.o obj/LibInterf.o obj/Scene.o obj/Set4LibInterf.o obj/xmlinterp.o obj/Configuration.o
+	g++ ${LDFLAGS} -o interp  obj/main.o obj/LibInterf.o obj/Scene.o obj/Set4LibInterf.o obj/xmlinterp.o obj/Configuration.o -ldl -lxerces -c
 
-obj/main.o: src/main.cpp inc/MobileObj.hh inc/Set4LibInterf.hh inc/Scene.hh
+obj/main.o: src/main.cpp inc/MobileObj.hh inc/Set4LibInterf.hh inc/Scene.hh inc/xmlinterp.hh inc/Configuration.hh
 	g++ -c ${CPPFLAGS} -o obj/main.o src/main.cpp
 
 obj/LibInterf.o: src/LibInterf.cpp inc/LibInterf.hh
@@ -37,6 +37,12 @@ obj/Set4LibInterf.o: src/Set4LibInterf.cpp inc/Set4LibInterf.hh
 
 obj/Scene.o: src/Scene.cpp inc/Scene.hh
 	g++ -c ${CPPFLAGS} -o obj/Scene.o src/Scene.cpp
+
+obj/xmlinterp.o: src/xmlinterp.cpp inc/xmlinterp.hh
+	g++ -c ${CPPFLAGS} -o obj/xmlinterp.o src/xmlinterp.cpp
+
+obj/xmlinterp.o: src/Configuration.cpp inc/Configuration.hh
+	g++ -c ${CPPFLAGS} -o obj/Configuration.o src/Configuration.cpp
 
 
 clean:

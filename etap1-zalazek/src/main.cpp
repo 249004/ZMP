@@ -3,17 +3,20 @@
 #include "MobileObj.hh"
 #include "Set4LibInterf.hh"
 #include "Scene.hh"
-/*#include <xercesc/sax2/SAX2XMLReader.hpp>
+#include <xercesc/sax2/SAX2XMLReader.hpp> //twierdzi ze nie ma takiego pliku
 #include <xercesc/sax2/XMLReaderFactory.hpp>
 #include <xercesc/sax2/DefaultHandler.hpp>
 #include <xercesc/util/XMLString.hpp>
 #include "xmlinterp.hh"
-#include <list>*/
+#include "Configuration.hh"
+#include <list>
+#include <iostream>
 
 
 #define LINE_SIZE 500
 
 using namespace std;
+using namespace xercesc;
 
 /*! \brief Uruchomienie preprocesora
  *  
@@ -92,6 +95,8 @@ bool ExecProgram(string file_name)
 }
 
 
+//z zalazka do etap2
+
 /*!
  * Czyta z pliku opis poleceń i dodaje je do listy komend,
  * które robot musi wykonać.
@@ -99,7 +104,7 @@ bool ExecProgram(string file_name)
  * \param CmdList - (\b we.) zarządca listy poleceń dla robota.
  * \retval true - jeśli wczytanie zostało zrealizowane poprawnie,
  * \retval false - w przeciwnym przypadku.
- *//*
+ */
 bool ReadFile(const char* sFileName, Configuration &rConfig)
 {
    try {
@@ -170,18 +175,18 @@ bool ReadFile(const char* sFileName, Configuration &rConfig)
    delete pParser;
    delete pHandler;
    return true;
-}*/
+}
 
 
-int main()
+int main(int argc, char* args[])
 {
 
-  //z zalazka lab3
-  /*
+  //z zalazka etap2
+  
   Configuration   Config;
 
   if (!ReadFile("config/Sconfig.xml",Config)) return 1;
-  */
+  
 
 
   if (true == ExecProgram("program_dzialan.cmd"))

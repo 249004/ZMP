@@ -1,6 +1,5 @@
 <map id="ExecProgram" name="ExecProgram">
-<area shape="rect" id="node1" title="Uruchomienie podanego pliku poleceń" alt="" coords="5,56,104,83"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#a2103bf5869d794314cf2a60a2d3813f6" title="Uruchomienie preprocesora." alt="" coords="163,5,289,32"/>
-<area shape="rect" id="node3" href="$classSet4LibInterf.html#ab067e38d353b3352dce837c4dcdfb446" title="Wyszukiwanie biblioteki." alt="" coords="165,56,287,83"/>
-<area shape="rect" id="node4" href="$classScene.html#a63c1df490b2d83432f57f9ea80581cd7" title="Funkcja wyszukująca obiekt." alt="" coords="152,107,300,133"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a2103bf5869d794314cf2a60a2d3813f6" title="Uruchomienie preprocesora. " alt="" coords="163,5,289,32"/>
+<area shape="rect" id="node3" href="$classSet4LibInterf.html#ab067e38d353b3352dce837c4dcdfb446" title="Wyszukiwanie biblioteki. " alt="" coords="165,56,287,83"/>
+<area shape="rect" id="node4" href="$classScene.html#a63c1df490b2d83432f57f9ea80581cd7" title="Funkcja wyszukująca obiekt. " alt="" coords="152,107,300,133"/>
 </map>

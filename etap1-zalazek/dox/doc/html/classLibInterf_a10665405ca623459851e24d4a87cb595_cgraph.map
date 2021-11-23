@@ -1,6 +1,5 @@
 <map id="LibInterf::LibInterf" name="LibInterf::LibInterf">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,129,57"/>
-<area shape="rect" id="node2" href="$classLibInterf.html#a19d0f0a7f7afa8875d9448707a193add" title="Inicjalizacja biblioteki." alt="" coords="181,5,315,32"/>
-<area shape="rect" id="node4" href="$classLibInterf.html#a7eadd9e51d627ebcf2617ede5acdefba" title="Zaladowanie biblioteki." alt="" coords="177,56,319,83"/>
-<area shape="rect" id="node3" href="$classInterp4Command.html#a9b1bff7ff363991b35965ae9dfeac648" title="Wyświetla nazwę polecenia." alt="" coords="367,5,577,32"/>
+<area shape="rect" id="node2" href="$classLibInterf.html#a19d0f0a7f7afa8875d9448707a193add" title="Inicjalizacja biblioteki. " alt="" coords="179,5,313,32"/>
+<area shape="rect" id="node4" href="$classLibInterf.html#a7eadd9e51d627ebcf2617ede5acdefba" title="Zaladowanie biblioteki. " alt="" coords="176,56,316,83"/>
+<area shape="rect" id="node3" href="$classInterp4Command.html#a9b1bff7ff363991b35965ae9dfeac648" title="Wyświetla nazwę polecenia. " alt="" coords="364,5,573,32"/>
 </map>
