@@ -7,7 +7,7 @@ zasadniczych podcelow i jednego podcelu pomocniczego.
                         make
 
  2. Pozwala na usuniecie wszystkich produktow kompilacji i konsolidacji.
-    Aby to zrobic nalezy wydac polecenie:
+    Aby to zrobic nalezy wydac poleceniee:
 
                         make clean
 
