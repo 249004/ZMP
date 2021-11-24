@@ -56,8 +56,24 @@ const char* Interp4Set::GetCmdName() const
 /*! \brief Funkcja odpowiadająca za wykonywanie polecenia.
  *
  */
-bool Interp4Set::ExecCmd( MobileObj  *pMobObj,  int Socket) const
+bool Interp4Set::ExecCmd( MobileObj  *pMobObj,  int Socket) const //AccessControl *pAccCtrl 
 {
+  /*
+  pAccCtrl->LockAccess();
+  Vector3D NewPos = pMobObj->GetPositoin_m();
+
+  NewPos[0] = this->x;
+  NewPos[1] = this->y;
+  
+  pMobObj->SetPosition_m(NewPos);
+  pMobObj->SetAng_Roll_deg(OX);
+  pMobObj->SetAng_Pitch_deg(OY);
+  pMobObj->SetAng_Yaw_deg(OZ);
+
+  pAccCtrl->MarkChange();
+  pAccCtrl->UnlockAccess();
+  usleep(300000);*/
+
   return true;
 }
 

@@ -13,9 +13,9 @@ using namespace std;
 
 /*!                                                                             
  * \file                                                                        
- * \brief Klasa, która pozwala na wyszukiwanie i dodawanie bibliotek                            
+ * \brief Klasa, która pozwala na uruchomienie preprocesora oraz czytanie komend.                           
  *                                                                              
- * Klasa przechowująca ścieżki do bibliotek, pozwala na ich wyszukiwanie oraz dodawanie.                                                                                                                         
+ * Klasa przechowująca ścieżki do bibliotek, pozwala na ich wyszukiwanie oraz dodawanie, a także uruchomienie preprocesora oraz czytanie komend.                                                                                                                       
  *                                                                              
  */
 class Set4LibInterf

@@ -53,8 +53,24 @@ const char* Interp4Move::GetCmdName() const
 /*! \brief Funkcja odpowiadająca za wykonywanie polecenia.
  *
  */
-bool Interp4Move::ExecCmd( MobileObj  *pMobObj,  int Socket) const
+bool Interp4Move::ExecCmd( MobileObj  *pMobObj,  int Socket) const //AccessControl *pAccCtrl 
 {
+  /*int it = std::floor(this->road_length/this->_Speed_mmS);
+  int Dir = this->_Speed_mmS > 0 ? 1 : -1;
+  
+  for (int i = 0; i < it; ++i) {
+    pAccCtrl->LockAccess();
+    double Ang = pMobObj->GetAng_Roll_deg();
+    Vector3D Pos = pMobObj->GetPosition_m();
+
+    Pos[0]+=this->_Speed_mmS*Dir*cos(M_PI*Ang/180);
+    Pos[1]+=this->_Speed_mmS*Dir*sin(M_PI*Ang/180);
+    
+    pMobObj->SetPosition_m(Pos);
+    pAccCtrl->MarkChange();
+    pAccCtrl->UnlockAccess();
+    usleep(100000);
+  }*/
   return true;
 }
 

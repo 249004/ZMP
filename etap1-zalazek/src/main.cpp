@@ -13,10 +13,7 @@ int main(int argc, char* args[])
 {
   istringstream Stream_in;
   Configuration config;
-
-  cout << "Port: " << PORT << endl;
-
-  int Socket4Sending;
+  int Socket4Send;
 
   if(ReadFile("config/config.xml",config) == false)
   {
@@ -27,17 +24,17 @@ int main(int argc, char* args[])
   map<string, MobileObj*> objectsList = config.GetObj_list();
   Set4LibInterf *LibraryList = new Set4LibInterf(objectsList);
 
-  if(!OpenConnection(Socket4Sending))
+  if(!OpenConnection(Socket4Send))
      return 1;
   else 
     cout << "Połączenie powiodło się." << endl;
 
-  Sender _Sender(Socket4Sending, LibraryList->getScena());
-  thread Thread4Sending(Fun_CommunicationThread, &_Sender);
+  Sender sender(Socket4Send, LibraryList->getScena());
+  thread Thread4Sending(Fun_CommunicationThread, &sender);
   LibraryList->ExecPreprocessor("program_dzialan.cmd", Stream_in);
-  LibraryList->ReadCommands(Stream_in,Socket4Sending);
+  LibraryList->ReadCommands(Stream_in,Socket4Send);
 
-  close(Socket4Sending, _Sender, move(Thread4Sending));
+  close(Socket4Send, sender, move(Thread4Sending));
   
   return 0;
 }

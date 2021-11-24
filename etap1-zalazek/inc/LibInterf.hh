@@ -15,9 +15,6 @@ using namespace std;
  * Klasa pozwalająca na operacje na bibliotekach.                                                                                                                    
  *                                                                              
  */
-
-
-
 class LibInterf
 {
     /*! \brief Uchwyt do biblioteki 
