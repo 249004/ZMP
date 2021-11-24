@@ -16,11 +16,13 @@
  */
 
 /*!
- * \brief Modeluje polecenie zawieszenia działania wątku interpretera
+ * \brief Modeluje polecenie dla robota mobilnego, które wymusza jego ruch do przodu
  *
- *  Klasa modeluje polecenie, które zawiesza działanie danego wątku interpretera na wybrany czas.
+ *  Klasa modeluje ...
  */
 class Interp4Pause: public Interp4Command {
+
+private:
   /*
    *  Tu należy zdefiniować pola, które są niezbędne
    *  do przechowywania wartości parametrów danego polecenia.

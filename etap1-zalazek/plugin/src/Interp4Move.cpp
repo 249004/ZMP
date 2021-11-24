@@ -50,14 +50,11 @@ const char* Interp4Move::GetCmdName() const
 }
 
 
-/*!
+/*! \brief Funkcja odpowiadająca za wykonywanie polecenia.
  *
  */
-bool Interp4Move::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
+bool Interp4Move::ExecCmd( MobileObj  *pMobObj,  int Socket) const
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
   return true;
 }
 

@@ -1,55 +1,27 @@
 #include "LibInterf.hh"
-#include <dlfcn.h>
-#include <iostream>
 
-
+/*! \brief Konstruktor klasy LibInterf
+ *   
+ * Odbywa się załadowanie biblioteki na podstawie podanej ścieżki.
+ * \param path ścieżka do biblioteki
+ */
 LibInterf::LibInterf(string path)
 {
-    library_load(path);
-    library_init();
+    handler = dlopen(path.c_str(), RTLD_LAZY);
+    if (!handler) 
+        cerr << "Brakuje biblioteki " << path << endl;
+
+    void *new_command = dlsym(handler, "CreateCmd");
+    if (!new_command) 
+        cerr << "Nie znaleziono funkcji CreateCmd!" << endl;
+
+    create_cmd = reinterpret_cast<Interp4Command* (*)(void)>(new_command); 
+    Interp4Command* command = create_cmd();
+    library_name = command->GetCmdName();
+    delete command;
 }
 
 LibInterf::~LibInterf()
 {
-    dlclose(this->handler);
+    dlclose(handler);
 }
-
-/*! \brief Zaladowanie biblioteki z podanej ścieżki
- *   
- * Załadowanie biblioteki na podstawie podanej ścieżki oraz sprawdzenie poprawności operacji 
- * \param path ścieżka do biblioteki
- */
-bool LibInterf::library_load(string path)  //zaladowanie biblioteki
-{
-    this->handler = dlopen(path.c_str(), RTLD_LAZY);
-
-    if (this->handler == nullptr) {
-        cerr << "Brakuje biblioteki " << path << endl;
-        return false;
-    }
-
-    cout << "Załadowano bibliotekę " << path << endl;
-    return true;
-
-}
-
-/*! \brief Inicjalizacja biblioteki 
- *  
- * Zainicjalizowanie biblioteki 
- */
-bool LibInterf::library_init() //inicjalizacja biblioteki
-{
-    void *new_command = dlsym(this->handler, "CreateCmd");
-
-    if (new_command == nullptr) {
-        cerr << "Nie znaleziono funkcji CreateCmd!" << endl;
-        return false;
-    }
-
-    create_cmd = reinterpret_cast<Interp4Command* (*)(void)>(new_command); 
-    Interp4Command* command = create_cmd();
-    this->library_name = command->GetCmdName();
-    delete command;
-    return true;
-}
-

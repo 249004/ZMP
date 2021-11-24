@@ -3,7 +3,7 @@
 
 #include <string>
 #include <xercesc/util/XMLString.hpp>
-//#include <xercesc/sax2/XMLReaderFactory.hpp>
+#include <xercesc/sax2/XMLReaderFactory.hpp>
 #include <xercesc/util/PlatformUtils.hpp>
 #include <xercesc/sax/Locator.hpp>
 
@@ -23,6 +23,7 @@
  */
 class XMLInterp4Config : public xercesc::DefaultHandler {
   public:
+  Configuration &config;
    /*!
     * \brief Inicjalizuje obiekt i kojarzy go z listą poleceń robota
     */
@@ -84,6 +85,9 @@ class XMLInterp4Config : public xercesc::DefaultHandler {
      */
     void ProcessCubeAttrs(const xercesc::Attributes&   rAttrs); 
   private:
+  
+
 };
 
+bool ReadFile(const char* filename, Configuration &config);
 #endif

@@ -5,7 +5,10 @@
 #include <cstdlib>
 #include <iostream>
 
-
+#include <xercesc/sax2/SAX2XMLReader.hpp>
+#include <xercesc/sax2/XMLReaderFactory.hpp>
+#include <xercesc/sax2/DefaultHandler.hpp>
+#include <xercesc/util/XMLString.hpp>
 
 using namespace std;
 
@@ -14,7 +17,7 @@ using namespace std;
  * Konstruktor klasy. Tutaj należy zainicjalizować wszystkie
  * dodatkowe pola.
  */
-XMLInterp4Config::XMLInterp4Config(Configuration &rConfig)
+XMLInterp4Config::XMLInterp4Config(Configuration &rConfig) : config(rConfig)
 {
 }
 
@@ -65,7 +68,7 @@ void XMLInterp4Config::ProcessLibAttrs(const xercesc::Attributes  &rAttrs)
 
  cout << "  Nazwa biblioteki: " << sLibName << endl;
 
- // Tu trzeba wpisać własny kod ...
+config.AddLib(sLibName);
 
  xercesc::XMLString::release(&sParamName);
  xercesc::XMLString::release(&sLibName);
@@ -90,21 +93,31 @@ void XMLInterp4Config::ProcessCubeAttrs(const xercesc::Attributes  &rAttrs)
   */
 
  char* sName_Name = xercesc::XMLString::transcode(rAttrs.getQName(0));
- char* sName_Scale = xercesc::XMLString::transcode(rAttrs.getQName(1));
- char* sName_RGB = xercesc::XMLString::transcode(rAttrs.getQName(2));
+ char* sName_Shift = xercesc::XMLString::transcode(rAttrs.getQName(1));
+ char* sName_Scale = xercesc::XMLString::transcode(rAttrs.getQName(2));
+ char* sName_RotXYZ = xercesc::XMLString::transcode(rAttrs.getQName(3));
+ char* sName_Trans = xercesc::XMLString::transcode(rAttrs.getQName(4));
+ char* sName_RGB = xercesc::XMLString::transcode(rAttrs.getQName(5));
 
  XMLSize_t  Index = 0;
  char* sValue_Name    = xercesc::XMLString::transcode(rAttrs.getValue(Index));
- char* sValue_Scale = xercesc::XMLString::transcode(rAttrs.getValue(1));
- char* sValue_RGB     = xercesc::XMLString::transcode(rAttrs.getValue(2));
+ char* sValue_Shift = xercesc::XMLString::transcode(rAttrs.getValue(1));
+ char* sValue_Scale    = xercesc::XMLString::transcode(rAttrs.getValue(2));
+ char* sValue_RotXYZ = xercesc::XMLString::transcode(rAttrs.getValue(3));
+ char* sValue_Trans = xercesc::XMLString::transcode(rAttrs.getValue(4));
+ char* sValue_RGB = xercesc::XMLString::transcode(rAttrs.getValue(5));
+ 
 
 
  //-----------------------------------------------------------------------------
  // Wyświetlenie nazw atrybutów i ich "wartości"
- //
+ //Shift="0 -0.5 0" SizeXYZ="0.5 0.2 0.2" RotXYZ="10 20 0" Trans_m="0.2 0.3 0" RGB="0 128 255"
  cout << " Atrybuty:" << endl
       << "     " << sName_Name << " = \"" << sValue_Name << "\"" << endl
-      << "     " << sName_Scale << " = \"" << sValue_Scale << "\"" << endl
+      << "     " << sName_Shift << " = \"" << sValue_Shift << "\"" << endl
+      << "     " << sName_Scale << " = \"" << sValue_Scale << "\"" << endl   
+      << "     " << sName_RotXYZ << " = \"" << sValue_RotXYZ << "\"" << endl   
+      << "     " << sName_Trans << " = \"" << sValue_Trans << "\"" << endl   
       << "     " << sName_RGB << " = \"" << sValue_RGB << "\"" << endl   
       << endl; 
  //-----------------------------------------------------------------------------
@@ -120,26 +133,35 @@ void XMLInterp4Config::ProcessCubeAttrs(const xercesc::Attributes  &rAttrs)
  //
  // IStrm >> Scale;
  //
- istringstream   IStrm;
+ istringstream   IStrm,IStrm1,IStrm2,IStrm3;
  
  IStrm.str(sValue_Scale);
- double  Sx,Sy,Sz;
+ IStrm1.str(sValue_Shift);
+ IStrm2.str(sValue_Trans);
+ IStrm3.str(sValue_RotXYZ);
+ Vector3D Scale,Shift,Trans,RotXYZ;
 
- IStrm >> Sx >> Sy >> Sz;
+
+ IStrm  >> Scale[0] >> Scale[1] >> Scale[2];
+ IStrm1 >> Shift[0] >> Shift[1] >> Shift[2];
+ IStrm2 >> Trans[0] >> Trans[1] >> Trans[2];
+ IStrm3 >> RotXYZ[0] >> RotXYZ[1] >> RotXYZ[2];
+
  if (IStrm.fail()) {
      cerr << " Blad!!!" << endl;
  } else {
      cout << " Czytanie wartosci OK!!!" << endl;
-     cout << "     " << Sx << "  " << Sy << "  " << Sz << endl;
+     cout << "     " << Scale[0] << "  " << Scale[1] << "  " << Scale[2] << endl;
  }
 
- // Tu trzeba wstawić odpowiednio własny kod ...
+//this->config.AddMobileObj(sValue_Name,Scale,sValue_RGB);
+this->config.AddObj(sValue_Name,Scale,sValue_RGB,Shift,RotXYZ,Trans);
 
  xercesc::XMLString::release(&sName_Name);
+ xercesc::XMLString::release(&sName_Shift);
  xercesc::XMLString::release(&sName_Scale);
- xercesc::XMLString::release(&sName_RGB);
- xercesc::XMLString::release(&sValue_Name);
- xercesc::XMLString::release(&sValue_Scale);
+ xercesc::XMLString::release(&sValue_RotXYZ);
+ xercesc::XMLString::release(&sValue_Trans);
  xercesc::XMLString::release(&sValue_RGB);
 }
 
@@ -319,3 +341,97 @@ void XMLInterp4Config::warning(const xercesc::SAXParseException&  rException)
    * jest tylko "atrapą".
    */
 }
+
+/*!
+ * Czyta z pliku opis poleceń i dodaje je do listy komend,
+ * które robot musi wykonać.
+ * \param sFileName - (\b we.) nazwa pliku z opisem poleceń.
+ * \param CmdList - (\b we.) zarządca listy poleceń dla robota.
+ * \retval true - jeśli wczytanie zostało zrealizowane poprawnie,
+ * \retval false - w przeciwnym przypadku.
+ */
+/*!
+ * Czyta z pliku opis poleceń i dodaje je do listy komend,
+ * które robot musi wykonać.
+ * \param sFileName - (\b we.) nazwa pliku z opisem poleceń.
+ * \param CmdList - (\b we.) zarządca listy poleceń dla robota.
+ * \retval true - jeśli wczytanie zostało zrealizowane poprawnie,
+ * \retval false - w przeciwnym przypadku.
+ */
+bool ReadFile(const char* filename, Configuration &config)
+{
+  try 
+  {
+    xercesc::XMLPlatformUtils::Initialize();
+  }
+
+  catch (const xercesc::XMLException& exception) 
+  {
+    char* message = xercesc::XMLString::transcode(exception.getMessage());
+    std::cerr << "Error during initialization! :\n";
+    std::cerr << "Exception message is: \n" << message << "\n";
+    xercesc::XMLString::release(&message);
+    return false;
+  }
+
+  xercesc::SAX2XMLReader* parser = xercesc::XMLReaderFactory::createXMLReader();
+
+  parser->setFeature(xercesc::XMLUni::fgSAX2CoreNameSpaces, true);
+  parser->setFeature(xercesc::XMLUni::fgSAX2CoreValidation, true);
+  parser->setFeature(xercesc::XMLUni::fgXercesDynamic, false);
+  parser->setFeature(xercesc::XMLUni::fgXercesSchema, true);
+  parser->setFeature(xercesc::XMLUni::fgXercesSchemaFullChecking, true);
+  parser->setFeature(xercesc::XMLUni::fgXercesValidationErrorAsFatal, true);
+
+  xercesc::DefaultHandler* handler = new XMLInterp4Config(config);
+  parser->setContentHandler(handler);
+  parser->setErrorHandler(handler);
+
+  try 
+  {
+    if (!parser->loadGrammar("config/config.xsd", xercesc::Grammar::SchemaGrammarType, true)) 
+    {
+      std::cerr << "Plik grammar/actions.xsd, ktory zawiera opis gramatyki, nie moze zostac wczytany." << std::endl;
+      return false;
+    }
+
+    parser->setFeature(xercesc::XMLUni::fgXercesUseCachedGrammarInParse,true);
+    parser->parse(filename);
+  }
+
+  catch (const xercesc::XMLException& exception) 
+  {
+    char* sMessage = xercesc::XMLString::transcode(exception.getMessage());
+    std::cerr << "Informacja o wyjatku: \n" << "   " << sMessage << "\n";
+    xercesc::XMLString::release(&sMessage);
+    return false;
+  }
+
+  catch (const xercesc::SAXParseException& exception) 
+  {
+    char* sMessage = xercesc::XMLString::transcode(exception.getMessage());
+    char* file = xercesc::XMLString::transcode(exception.getSystemId());
+
+    std::cerr << "Blad! " << std::endl
+    << "    Plik:  " << file << std::endl
+    << "   Linia: " << exception.getLineNumber() << std::endl
+    << " Kolumna: " << exception.getColumnNumber() << std::endl
+    << " Informacja: " << sMessage 
+    << std::endl;
+
+    xercesc::XMLString::release(&sMessage);
+    xercesc::XMLString::release(&file);
+    return false;
+  }
+
+  catch (...) 
+  {
+    std::cout << "Zgloszony zostal nieoczekiwany wyjatek!\n" ;
+    return false;
+  }
+
+  delete parser;
+  delete handler;
+  return true;
+}
+

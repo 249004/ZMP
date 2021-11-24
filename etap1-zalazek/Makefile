@@ -1,5 +1,5 @@
 __start__: obj interp __plugin__
-	export LD_LIBRARY_PATH="./libs"
+	export LD_LIBRARY_PATH="./libs"; ./interp
 
 obj:
 	mkdir obj
@@ -22,10 +22,10 @@ LDFLAGS=-Wall -g
 
 
 
-interp: obj/main.o obj/LibInterf.o obj/Scene.o obj/Set4LibInterf.o obj/xmlinterp.o obj/Configuration.o
-	g++ ${LDFLAGS} -o interp  obj/main.o obj/LibInterf.o obj/Scene.o obj/Set4LibInterf.o obj/xmlinterp.o obj/Configuration.o -ldl -lxerces -c
+interp: obj/main.o obj/LibInterf.o obj/Scena.o obj/Set4LibInterf.o obj/xmlinterp.o obj/Configuration.o obj/klient.o 
+	g++ ${LDFLAGS} -o interp  obj/main.o obj/LibInterf.o obj/Scena.o obj/Set4LibInterf.o obj/xmlinterp.o obj/Configuration.o obj/klient.o -ldl -lxerces-c -pthread
 
-obj/main.o: src/main.cpp inc/MobileObj.hh inc/Set4LibInterf.hh inc/Scene.hh inc/xmlinterp.hh inc/Configuration.hh
+obj/main.o: src/main.cpp inc/Interp4Command.hh inc/xmlinterp.hh  inc/AccessControl.hh inc/Configuration.hh inc/Port.hh inc/klient.hh
 	g++ -c ${CPPFLAGS} -o obj/main.o src/main.cpp
 
 obj/LibInterf.o: src/LibInterf.cpp inc/LibInterf.hh
@@ -34,16 +34,17 @@ obj/LibInterf.o: src/LibInterf.cpp inc/LibInterf.hh
 obj/Set4LibInterf.o: src/Set4LibInterf.cpp inc/Set4LibInterf.hh
 	g++ -c ${CPPFLAGS} -o obj/Set4LibInterf.o src/Set4LibInterf.cpp
 
+obj/Scena.o: src/Scena.cpp inc/Scena.hh
+	g++ -c ${CPPFLAGS} -o obj/Scena.o src/Scena.cpp
 
-obj/Scene.o: src/Scene.cpp inc/Scene.hh
-	g++ -c ${CPPFLAGS} -o obj/Scene.o src/Scene.cpp
-
-obj/xmlinterp.o: src/xmlinterp.cpp inc/xmlinterp.hh
+obj/xmlinterp.o: src/xmlinterp.cpp inc/xmlinterp.hh 
 	g++ -c ${CPPFLAGS} -o obj/xmlinterp.o src/xmlinterp.cpp
 
-obj/xmlinterp.o: src/Configuration.cpp inc/Configuration.hh
+obj/Configuration.o: src/Configuration.cpp inc/Configuration.hh 
 	g++ -c ${CPPFLAGS} -o obj/Configuration.o src/Configuration.cpp
 
+obj/klient.o: src/klient.cpp inc/klient.hh 
+	g++ -c ${CPPFLAGS} -o obj/klient.o src/klient.cpp
 
 clean:
 	rm -f obj/* interp core*
