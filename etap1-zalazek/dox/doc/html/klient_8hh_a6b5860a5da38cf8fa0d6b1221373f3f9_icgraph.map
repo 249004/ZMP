@@ -1,0 +1,5 @@
+<map id="Fun_CommunicationThread" name="Fun_CommunicationThread">
+<area shape="rect" id="node2" href="$main_8cpp.html#a700a0caa5b70a06d1064e576f9f3cf65" title="main" alt="" coords="663,5,713,32"/>
+<area shape="rect" id="node3" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego. " alt="" coords="235,27,385,69"/>
+<area shape="rect" id="node4" href="$klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9" title="Funkcja jest treścią wątku komunikacyjnego. " alt="" coords="433,35,615,61"/>
+</map>

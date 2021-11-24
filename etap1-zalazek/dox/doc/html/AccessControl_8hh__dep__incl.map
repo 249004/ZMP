@@ -1,0 +1,9 @@
+<map id="AccessControl.hh" name="AccessControl.hh">
+<area shape="rect" id="node2" href="$Scena_8hh.html" title="Scena na której pojawiają się obiekty. " alt="" coords="107,80,183,107"/>
+<area shape="rect" id="node3" href="$klient_8hh.html" title="klient.hh" alt="" coords="15,155,86,181"/>
+<area shape="rect" id="node4" href="$Set4LibInterf_8hh.html" title="Klasa, która pozwala na wyszukiwanie i dodawanie bibliotek. " alt="" coords="145,229,258,256"/>
+<area shape="rect" id="node8" href="$Scena_8cpp.html" title="Scena.cpp" alt="" coords="111,155,193,181"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="main.cpp" alt="" coords="5,304,80,331"/>
+<area shape="rect" id="node7" href="$klient_8cpp.html" title="klient.cpp" alt="" coords="43,229,120,256"/>
+<area shape="rect" id="node6" href="$Set4LibInterf_8cpp.html" title="Set4LibInterf.cpp" alt="" coords="141,304,261,331"/>
+</map>

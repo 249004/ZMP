@@ -1,0 +1,16 @@
+<map id="XMLInterp4Config::startElement" name="XMLInterp4Config::startElement">
+<area shape="rect" id="node2" href="$classXMLInterp4Config.html#a5e3c76e68652f288d9bad7ce55493253" title="Wykonuje operacje związane z danym elementem XML. " alt="" coords="256,169,448,210"/>
+<area shape="rect" id="node3" href="$classXMLInterp4Config.html#a18cd48f030387cdc1c52211856735f33" title="Analizuje atrybuty i odpwiednio je interpretuje. " alt="" coords="496,135,673,177"/>
+<area shape="rect" id="node5" href="$classXMLInterp4Config.html#a5888326f2d9145908ff308e9aeff795e" title="Analizuje atrybuty i odpwiednio je interpretuje. " alt="" coords="496,201,673,242"/>
+<area shape="rect" id="node4" href="$classConfiguration.html#a4f11657236f0e49513aad3331e6c9920" title="Funkcja odpowiadająca za dodawanie biblioteki do listy. " alt="" coords="723,143,866,169"/>
+<area shape="rect" id="node6" href="$classConfiguration.html#ae81151945f985a10b9fd8c5b0afc7b63" title="Funkcja odpowiadająca za dodawanie nowego obiektu. " alt="" coords="721,208,868,235"/>
+<area shape="rect" id="node7" href="$classConfiguration.html#ac770a34a4325483b6322f7e37fcbfbe7" title="Metoda zwracająca biblioteki, które są dostępne jako mapa. " alt="" coords="930,5,1097,32"/>
+<area shape="rect" id="node8" href="$classMobileObj.html#ad06c4b0a90be9fcc10c115d46dc288e5" title="Zmienia wartość kąta pitch. " alt="" coords="916,56,1111,83"/>
+<area shape="rect" id="node9" href="$classMobileObj.html#a7a496924b3ee3576b4791436546c0728" title="Zmienia wartość kąta roll. " alt="" coords="920,107,1107,133"/>
+<area shape="rect" id="node10" href="$classMobileObj.html#a8c9ce017216192d2a9de9553364f80fd" title="Zmienia wartość kąta yaw. " alt="" coords="919,157,1108,184"/>
+<area shape="rect" id="node11" href="$classMobileObj.html#a407483db752db8a6d2170a8cb264a409" title="Zmienia kolor obiektu. " alt="" coords="945,208,1081,235"/>
+<area shape="rect" id="node12" href="$classMobileObj.html#ae348bbcf0a1d699330d4f56603bfcf51" title="Zmienia nazwę obiektu. " alt="" coords="943,259,1083,285"/>
+<area shape="rect" id="node13" href="$classMobileObj.html#a1bebe1bd87b363c1f87d708f9549eaf3" title="Zmienia współrzędne położenia obiektu. " alt="" coords="928,309,1099,336"/>
+<area shape="rect" id="node14" href="$classMobileObj.html#a48d02ca8a10b69d1390887ce1f0403c4" title="Zmienia skalę. " alt="" coords="944,360,1083,387"/>
+<area shape="rect" id="node15" href="$classMobileObj.html#a8398ef7fbcd553bddbf5fe8c46bdcd08" title="Zmienia parametr T_shift obiektu. " alt="" coords="947,411,1080,437"/>
+</map>

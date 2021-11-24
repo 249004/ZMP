@@ -1,0 +1,8 @@
+<map id="Set4LibInterf::ReadCommands" name="Set4LibInterf::ReadCommands">
+<area shape="rect" id="node2" href="$classScena.html#a5e39fd3c2b819bcd313533998ef5f139" title="Funkcja wyszukująca obiekt. " alt="" coords="277,5,425,32"/>
+<area shape="rect" id="node3" href="$classScena.html#a3076849417c1b677ee6bda1d780feda3" title="Wektor, w którym są wszystkie obiekty znajdujące się na scenie. " alt="" coords="300,56,403,83"/>
+<area shape="rect" id="node4" href="$classSet4LibInterf.html#a52def5b41058c5f047030726bed562a4" title="Set4LibInterf::getScena" alt="" coords="273,107,430,133"/>
+<area shape="rect" id="node5" href="$classInterp4Command.html#a08fbbf2a70cdac46930b0eba6f5f361c" title="Wyświetla postać bieżącego polecenia (nazwę oraz wartości parametrów). " alt="" coords="261,157,442,184"/>
+<area shape="rect" id="node6" href="$classInterp4Command.html#a3e15ef01af10fa8961926fd9b0274ab8" title="Czyta wartości parametrów danego polecenia. " alt="" coords="251,208,452,235"/>
+<area shape="rect" id="node7" href="$klient_8hh.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis do poprzez gniazdo sieciowe. " alt="" coords="325,259,377,285"/>
+</map>
