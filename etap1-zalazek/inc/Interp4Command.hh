@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "MobileObj.hh"
+#include "AccessControl.hh"
 
 /*!
  * \file
@@ -39,8 +40,8 @@
    /*!
     * \brief Wykonuje polecenie oraz wizualizuje jego realizację.
     */
-   virtual bool ExecCmd( MobileObj *pMobObj, int Socket ) const = 0;
-   //   virtual bool ExecCmd( MobileObj *pMobObj, AccessControl *pAccCtrl ) const = 0; //trzeba na to zamienic
+   //virtual bool ExecCmd( MobileObj *pMobObj, int Socket ) const = 0;
+   virtual bool ExecCmd( MobileObj *pMobObj, AccessControl *pAccCtrl ) const = 0;
    /*!
     * \brief Czyta wartości parametrów danego polecenia.
     */

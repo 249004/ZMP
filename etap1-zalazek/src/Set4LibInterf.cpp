@@ -6,18 +6,20 @@ Set4LibInterf::Set4LibInterf(map<string, MobileObj*> &Obj_list)
     add_library("libs/libInterp4Move.so");
     add_library("libs/libInterp4Set.so");
     add_library("libs/libInterp4Rotate.so");
+    add_library("libs/libInterp4Pause.so");
 }
 
 Set4LibInterf::~Set4LibInterf() 
 { 
   Lib_list.clear();
   if(scena != nullptr) 
-    delete scena;}
+    delete scena;
+}
 
 /*! \brief Funkcja odpowiada za dodawanie biblioteki 
  *  Dodawanie biblioteki, która znajduje się pod podaną ścieżką
  * 
- * \param path ścieżka pod którą znajduje się biblioteka
+ * \param[in] path ścieżka pod którą znajduje się biblioteka
  */
 void Set4LibInterf::add_library(string path)
 {
@@ -27,8 +29,8 @@ void Set4LibInterf::add_library(string path)
 
 /*! \brief Uruchomienie preprocesora.
  *  
- * \param NazwaPliku nazwa wczytywanego pliku poleceń
- * \param IStrm4Cmds podawany strumień 
+ * \param[in] NazwaPliku nazwa wczytywanego pliku poleceń
+ * \param[in] IStrm4Cmds podawany strumień 
  */
 bool Set4LibInterf::ExecPreprocessor(string NazwaPliku, istringstream &IStrm4Cmds)
 {
@@ -52,56 +54,80 @@ bool Set4LibInterf::ExecPreprocessor(string NazwaPliku, istringstream &IStrm4Cmd
 
  /*! \brief Funkcja odpowiadająca za czytanie komend.
   *
-  * \param Strm_in - strumień utworzony przez preprocesor
+  * \param[in] Strm_in - strumień utworzony przez preprocesor
   */
 bool Set4LibInterf::ReadCommands (istringstream &Strm_in, int socket)
 {
   string command_name;
   string object_name;
   bool flag;
+  string info = "Clear \n";
 
-  vector<MobileObj*> Obj_list = this->getScena()->getObj();
-  
-  Send(socket,"Clear\n");
-  for(MobileObj* _objectPtr : Obj_list) {
-    string info =  _objectPtr->returnParameters();
-    Send(socket,info.c_str());
-    cout << info << endl;
+  vector<MobileObj*> list_obj = this->getScena()->getObj();
+
+  for(MobileObj* pObj : list_obj) {
+    info += "AddObj " + pObj->returnParameters();
   }
 
-  while (Strm_in >> command_name) 
+  const char *cmd_config = info.c_str();
+  Send(socket, cmd_config);
+
+  while (Strm_in >> command_name) //sprawdzenie czy w strumieniu jest jakas komenda
   {
-    if(command_name!= "Pause") Strm_in >> object_name;
-    
-    flag = true;
-    map<string, LibInterf*>::iterator it = this->Lib_list.find(command_name);
-    if (it == this->Lib_list.end())
+    vector<thread *> list_thr;
+
+    while (command_name != "End_Parallel_Actions")
     {
-      cerr << "Komenda  " << command_name << "nie została znaleziona." << endl;
-      flag = false;
-    }
+
+      if(command_name != "Pause" && command_name != "Begin_Parallel_Actions") 
+        Strm_in >> object_name;
       
-    if(flag)
-    {
-      Interp4Command *command = it->second->create_cmd();
-      if (!command->ReadParams(Strm_in))
+      flag = true;
+      map<string, LibInterf*>::iterator it = this->Lib_list.find(command_name);
+
+      if (it == this->Lib_list.end())
       {
-        cerr << "Nie udało się wczytać parametrów." << command_name << endl;
-        delete command;
-        return false;
+        cerr << "Komenda  " << command_name << "nie została znaleziona." << endl;
+        flag = false;
       }
-      MobileObj* MobObj = this->scena->FindMobileObj(object_name);
-      if(MobObj == nullptr)
+        
+      if(flag)
       {
-        cerr << "Nie znaleziono obiektu " << object_name << endl;
-        delete command;
-        return false;
-      }
+        Interp4Command *command = it->second->create_cmd();
+
+        if (!command->ReadParams(Strm_in)) {
+
+          cerr << "Nie udało się wczytać parametrów." << command_name << endl;
+          delete command;
+          return false;
+        }
+
+        MobileObj* MobObj = this->scena->FindMobileObj(object_name);
+
+        if(MobObj == nullptr) {
+
+          cerr << "Nie znaleziono obiektu " << object_name << endl;
+          delete command;
+          return false;
+        }
+        else {
+
+          command->PrintCmd();
+          thread* new_thread = new thread(&Interp4Command::ExecCmd, command, MobObj, this->scena);
+          list_thr.push_back(new_thread);
+        }
     
-      command->PrintCmd();
-      delete command;
+      }
+      Strm_in >> command_name;
+
     }
-    
+
+    for (thread *objThr : list_thr) { //oczekiwanie na zakonczenie wszystkich zadan
+      objThr->join();
+      delete objThr;
+    }
+
   }
   return true;
+  
 }

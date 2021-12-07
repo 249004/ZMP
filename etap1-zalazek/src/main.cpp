@@ -9,32 +9,31 @@
 
 using namespace std;
 
-int main(int argc, char* args[])
+int main()
 {
   istringstream Stream_in;
   Configuration config;
   int Socket4Send;
 
-  if(ReadFile("config/config.xml",config) == false)
-  {
+  cout << "Port: " << PORT << endl; //moze do wywalenia
+  
+  if(ReadFile("config/config.xml",config) == false) {
     cerr << "Czytanie pliku nie powiodło się."<<endl;
     return 1;
   }
 
-  map<string, MobileObj*> objectsList = config.GetObj_list();
-  Set4LibInterf *LibraryList = new Set4LibInterf(objectsList);
+  map<string, MobileObj*> objects_list = config.GetObject_list();
+  Set4LibInterf *libraries_list = new Set4LibInterf(objects_list);
 
   if(!OpenConnection(Socket4Send))
      return 1;
   else 
-    cout << "Połączenie powiodło się." << endl;
+    cout << "Połączenie się powiodło." << endl;
 
-  Sender sender(Socket4Send, LibraryList->getScena());
-  thread Thread4Sending(Fun_CommunicationThread, &sender);
-  LibraryList->ExecPreprocessor("program_dzialan.cmd", Stream_in);
-  LibraryList->ReadCommands(Stream_in,Socket4Send);
-
-  close(Socket4Send, sender, move(Thread4Sending));
+  Sender *sender_ = new Sender(Socket4Send, libraries_list->getScena());
+  libraries_list->ExecPreprocessor("program_dzialan.cmd", Stream_in);
+  libraries_list->ReadCommands(Stream_in, Socket4Send);
   
   return 0;
 }
+

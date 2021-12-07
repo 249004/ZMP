@@ -1,9 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Interpreter: Plik źródłowy klient.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -12,10 +13,6 @@
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -34,22 +31,16 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Wygenerowano przez Doxygen 1.8.11 -->
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
-      <li><a href="pages.html"><span>Dodatkowe&#160;strony</span></a></li>
-      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
-      <li><a href="annotated.html"><span>Klasy</span></a></li>
-      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
-      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
-    </ul>
-  </div>
+<!-- Wygenerowano przez Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -62,7 +53,9 @@
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('klient_8cpp_source.html','');});
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('klient_8cpp_source.html',''); initResizable(); });
+/* @license-end */
 </script>
 <div id="doc-content">
 <div class="header">
@@ -70,24 +63,87 @@ $(document).ready(function(){initNavTree('klient_8cpp_source.html','');});
 <div class="title">klient.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="klient_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="klient_8hh.html">klient.hh</a>&quot;</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0">   12</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0">Send</a>(<span class="keywordtype">int</span> Sk2Server, <span class="keyword">const</span> <span class="keywordtype">char</span> *sMesg)</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  ssize_t  IlWyslanych;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  ssize_t  IlDoWyslania = (ssize_t) strlen(sMesg);</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordflow">while</span> ((IlWyslanych = write(Sk2Server,sMesg,IlDoWyslania)) &gt; 0)</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    IlDoWyslania -= IlWyslanych;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    sMesg += IlWyslanych;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  }</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">if</span> (IlWyslanych &lt; 0)</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    cerr &lt;&lt; <span class="stringliteral">&quot;*** Blad przeslania napisu.&quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  }</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9">   29</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9">Fun_CommunicationThread</a>(<a class="code" href="classSender.html">Sender</a>  *pSender)</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  pSender-&gt;<a class="code" href="classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8">Watching_and_Sending</a>();</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="klient_8cpp.html#a49ba9261b2ded960bce23328c431e31d">   34</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="klient_8cpp.html#a49ba9261b2ded960bce23328c431e31d">OpenConnection</a>(<span class="keywordtype">int</span> &amp;rSocket)</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">struct </span>sockaddr_in  DaneAdSerw;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  bzero((<span class="keywordtype">char</span> *)&amp;DaneAdSerw,<span class="keyword">sizeof</span>(DaneAdSerw));</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  DaneAdSerw.sin_family = AF_INET;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  DaneAdSerw.sin_addr.s_addr = inet_addr(<span class="stringliteral">&quot;127.0.0.1&quot;</span>);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  DaneAdSerw.sin_port = htons(<a class="code" href="Port_8hh.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a>);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  rSocket = socket(AF_INET,SOCK_STREAM,0);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">if</span> (rSocket &lt; 0) {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;     cerr &lt;&lt; <span class="stringliteral">&quot;*** Blad otwarcia gniazda.&quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;     <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">if</span> (connect(rSocket,(<span class="keyword">struct</span> sockaddr*)&amp;DaneAdSerw,<span class="keyword">sizeof</span>(DaneAdSerw)) &lt; 0)</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;   {</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;     cerr &lt;&lt; <span class="stringliteral">&quot;*** Brak mozliwosci polaczenia do portu: &quot;</span> &lt;&lt; <a class="code" href="Port_8hh.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a> &lt;&lt; endl;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;     <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   }</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="klient_8cpp.html#acb42c02972ba9bd7a0fd4c55252d2547">   60</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="klient_8cpp.html#acb42c02972ba9bd7a0fd4c55252d2547">close</a>(<span class="keywordtype">int</span> socket, <a class="code" href="classSender.html">Sender</a> &amp;clientSender, thread t){</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Close(połączenie zamknięte)\n&quot;</span> &lt;&lt; endl; <span class="comment">// To tylko, aby pokazac wysylana instrukcje</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0">Send</a>(socket, <span class="stringliteral">&quot;Close\n&quot;</span>);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    clientSender.<a class="code" href="classSender.html#a96412f54520d550dd1ea3e9b3bb29786">CancelCountinueLooping</a>();</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    t.join();</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="klient_8cpp.html#acb42c02972ba9bd7a0fd4c55252d2547">close</a>(socket);</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div><div class="ttc" id="klient_8cpp_html_acb42c02972ba9bd7a0fd4c55252d2547"><div class="ttname"><a href="klient_8cpp.html#acb42c02972ba9bd7a0fd4c55252d2547">close</a></div><div class="ttdeci">void close(int socket, Sender &amp;clientSender, thread t)</div><div class="ttdef"><b>Definition:</b> <a href="klient_8cpp_source.html#l00060">klient.cpp:60</a></div></div>
-<div class="ttc" id="classSender_html_a96412f54520d550dd1ea3e9b3bb29786"><div class="ttname"><a href="classSender.html#a96412f54520d550dd1ea3e9b3bb29786">Sender::CancelCountinueLooping</a></div><div class="ttdeci">void CancelCountinueLooping()</div><div class="ttdoc">Powoduje przerwanie działania pętli wątku. </div><div class="ttdef"><b>Definition:</b> <a href="klient_8hh_source.html#l00076">klient.hh:76</a></div></div>
-<div class="ttc" id="klient_8hh_html"><div class="ttname"><a href="klient_8hh.html">klient.hh</a></div></div>
-<div class="ttc" id="klient_8cpp_html_ad7d409ff5eb0e067f283005e8998d4c0"><div class="ttname"><a href="klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0">Send</a></div><div class="ttdeci">int Send(int Sk2Server, const char *sMesg)</div><div class="ttdoc">Wysyła napis poprzez gniazdo sieciowe. </div><div class="ttdef"><b>Definition:</b> <a href="klient_8cpp_source.html#l00012">klient.cpp:12</a></div></div>
-<div class="ttc" id="classSender_html_a100a3e1f1a1ab4c388391e5b5a6de9f8"><div class="ttname"><a href="classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8">Sender::Watching_and_Sending</a></div><div class="ttdeci">void Watching_and_Sending()</div><div class="ttdoc">Ta metoda jest de facto treścią wątku komunikacyjnego. </div><div class="ttdef"><b>Definition:</b> <a href="klient_8hh_source.html#l00086">klient.hh:86</a></div></div>
-<div class="ttc" id="klient_8cpp_html_a49ba9261b2ded960bce23328c431e31d"><div class="ttname"><a href="klient_8cpp.html#a49ba9261b2ded960bce23328c431e31d">OpenConnection</a></div><div class="ttdeci">bool OpenConnection(int &amp;rSocket)</div><div class="ttdef"><b>Definition:</b> <a href="klient_8cpp_source.html#l00034">klient.cpp:34</a></div></div>
-<div class="ttc" id="klient_8cpp_html_a6b5860a5da38cf8fa0d6b1221373f3f9"><div class="ttname"><a href="klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9">Fun_CommunicationThread</a></div><div class="ttdeci">void Fun_CommunicationThread(Sender *pSender)</div><div class="ttdoc">Funkcja jest treścią wątku komunikacyjnego. </div><div class="ttdef"><b>Definition:</b> <a href="klient_8cpp_source.html#l00029">klient.cpp:29</a></div></div>
-<div class="ttc" id="Port_8hh_html_a614217d263be1fb1a5f76e2ff7be19a2"><div class="ttname"><a href="Port_8hh.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a></div><div class="ttdeci">#define PORT</div><div class="ttdoc">Port poprzez który realizowana jest komunikacja z klientem. </div><div class="ttdef"><b>Definition:</b> <a href="Port_8hh_source.html#l00011">Port.hh:11</a></div></div>
-<div class="ttc" id="classSender_html"><div class="ttname"><a href="classSender.html">Sender</a></div><div class="ttdoc">Modeluje nadajnik poleceń odzwierciedlających aktualny stan sceny. </div><div class="ttdef"><b>Definition:</b> <a href="klient_8hh_source.html#l00035">klient.hh:35</a></div></div>
+<a href="klient_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="klient_8hh.html">klient.hh</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0">   12</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0">Send</a>(<span class="keywordtype">int</span> Sk2Server, <span class="keyword">const</span> <span class="keywordtype">char</span> *sMesg)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  ssize_t  IlWyslanych;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  ssize_t  IlDoWyslania = (ssize_t) strlen(sMesg);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordflow">while</span> ((IlWyslanych = write(Sk2Server,sMesg,IlDoWyslania)) &gt; 0)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    IlDoWyslania -= IlWyslanych;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    sMesg += IlWyslanych;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">if</span> (IlWyslanych &lt; 0)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    cerr &lt;&lt; <span class="stringliteral">&quot;*** Blad przeslania napisu.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9">   29</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9">Fun_CommunicationThread</a>(<a class="code" href="classSender.html">Sender</a>  *pSender)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  pSender-&gt;<a class="code" href="classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8">Watching_and_Sending</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classSender.html#ae73443655147c48bc75b4ec1afb2a2d2">   34</a></span>&#160;<a class="code" href="classSender.html#ae73443655147c48bc75b4ec1afb2a2d2">Sender::Sender</a>(<span class="keywordtype">int</span> Socket, <a class="code" href="classScena.html">Scena</a> *pScn): _Socket(Socket), _pScn(pScn){this-&gt;<a class="code" href="classSender.html#a310fb5f7a9d440b9245af9c25a496ca3">client_thread</a> = std::thread(<a class="code" href="klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9">Fun_CommunicationThread</a>,<span class="keyword">this</span>);}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="klient_8cpp.html#a49ba9261b2ded960bce23328c431e31d">   36</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="klient_8cpp.html#a49ba9261b2ded960bce23328c431e31d">OpenConnection</a>(<span class="keywordtype">int</span> &amp;rSocket)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">struct </span>sockaddr_in  DaneAdSerw;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  bzero((<span class="keywordtype">char</span> *)&amp;DaneAdSerw,<span class="keyword">sizeof</span>(DaneAdSerw));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  DaneAdSerw.sin_family = AF_INET;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  DaneAdSerw.sin_addr.s_addr = inet_addr(<span class="stringliteral">&quot;127.0.0.1&quot;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  DaneAdSerw.sin_port = htons(<a class="code" href="Port_8hh.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  rSocket = socket(AF_INET,SOCK_STREAM,0);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">if</span> (rSocket &lt; 0) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;     cerr &lt;&lt; <span class="stringliteral">&quot;*** Blad otwarcia gniazda.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;     <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">if</span> (connect(rSocket,(<span class="keyword">struct</span> sockaddr*)&amp;DaneAdSerw,<span class="keyword">sizeof</span>(DaneAdSerw)) &lt; 0)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;     cerr &lt;&lt; <span class="stringliteral">&quot;*** Brak mozliwosci polaczenia do portu: &quot;</span> &lt;&lt; <a class="code" href="Port_8hh.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;     <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="klient_8cpp.html#acb42c02972ba9bd7a0fd4c55252d2547">   62</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="klient_8cpp.html#acb42c02972ba9bd7a0fd4c55252d2547">close</a>(<span class="keywordtype">int</span> socket, <a class="code" href="classSender.html">Sender</a> &amp;clientSender, thread t){</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Close(połączenie zamknięte)\n&quot;</span> &lt;&lt; endl; <span class="comment">// To tylko, aby pokazac wysylana instrukcje</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0">Send</a>(socket, <span class="stringliteral">&quot;Close\n&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    clientSender.<a class="code" href="classSender.html#a96412f54520d550dd1ea3e9b3bb29786">CancelCountinueLooping</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    t.join();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="klient_8cpp.html#acb42c02972ba9bd7a0fd4c55252d2547">close</a>(socket);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aklient_8hh_html"><div class="ttname"><a href="klient_8hh.html">klient.hh</a></div></div>
+<div class="ttc" id="aclassSender_html_a100a3e1f1a1ab4c388391e5b5a6de9f8"><div class="ttname"><a href="classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8">Sender::Watching_and_Sending</a></div><div class="ttdeci">void Watching_and_Sending()</div><div class="ttdoc">Ta metoda jest de facto treścią wątku komunikacyjnego.</div><div class="ttdef"><b>Definition:</b> <a href="klient_8hh_source.html#l00094">klient.hh:94</a></div></div>
+<div class="ttc" id="aclassSender_html_ae73443655147c48bc75b4ec1afb2a2d2"><div class="ttname"><a href="classSender.html#ae73443655147c48bc75b4ec1afb2a2d2">Sender::Sender</a></div><div class="ttdeci">Sender(int Socket, Scena *pScn)</div><div class="ttdoc">Inicjalizuje obiekt deskryptorem gniazda i wskaźnikiem na scenę, na zmianę stanu które będzie ten obi...</div><div class="ttdef"><b>Definition:</b> <a href="klient_8cpp_source.html#l00034">klient.cpp:34</a></div></div>
+<div class="ttc" id="aklient_8cpp_html_ad7d409ff5eb0e067f283005e8998d4c0"><div class="ttname"><a href="klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0">Send</a></div><div class="ttdeci">int Send(int Sk2Server, const char *sMesg)</div><div class="ttdoc">Wysyła napis poprzez gniazdo sieciowe.</div><div class="ttdef"><b>Definition:</b> <a href="klient_8cpp_source.html#l00012">klient.cpp:12</a></div></div>
+<div class="ttc" id="aclassSender_html_a96412f54520d550dd1ea3e9b3bb29786"><div class="ttname"><a href="classSender.html#a96412f54520d550dd1ea3e9b3bb29786">Sender::CancelCountinueLooping</a></div><div class="ttdeci">void CancelCountinueLooping()</div><div class="ttdoc">Powoduje przerwanie działania pętli wątku.</div><div class="ttdef"><b>Definition:</b> <a href="klient_8hh_source.html#l00084">klient.hh:84</a></div></div>
+<div class="ttc" id="aclassSender_html_a310fb5f7a9d440b9245af9c25a496ca3"><div class="ttname"><a href="classSender.html#a310fb5f7a9d440b9245af9c25a496ca3">Sender::client_thread</a></div><div class="ttdeci">thread client_thread</div><div class="ttdef"><b>Definition:</b> <a href="klient_8hh_source.html#l00054">klient.hh:54</a></div></div>
+<div class="ttc" id="aklient_8cpp_html_a6b5860a5da38cf8fa0d6b1221373f3f9"><div class="ttname"><a href="klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9">Fun_CommunicationThread</a></div><div class="ttdeci">void Fun_CommunicationThread(Sender *pSender)</div><div class="ttdoc">Funkcja jest treścią wątku komunikacyjnego.</div><div class="ttdef"><b>Definition:</b> <a href="klient_8cpp_source.html#l00029">klient.cpp:29</a></div></div>
+<div class="ttc" id="aclassScena_html"><div class="ttname"><a href="classScena.html">Scena</a></div><div class="ttdef"><b>Definition:</b> <a href="Scena_8hh_source.html#l00018">Scena.hh:18</a></div></div>
+<div class="ttc" id="aklient_8cpp_html_acb42c02972ba9bd7a0fd4c55252d2547"><div class="ttname"><a href="klient_8cpp.html#acb42c02972ba9bd7a0fd4c55252d2547">close</a></div><div class="ttdeci">void close(int socket, Sender &amp;clientSender, thread t)</div><div class="ttdef"><b>Definition:</b> <a href="klient_8cpp_source.html#l00062">klient.cpp:62</a></div></div>
+<div class="ttc" id="aklient_8cpp_html_a49ba9261b2ded960bce23328c431e31d"><div class="ttname"><a href="klient_8cpp.html#a49ba9261b2ded960bce23328c431e31d">OpenConnection</a></div><div class="ttdeci">bool OpenConnection(int &amp;rSocket)</div><div class="ttdef"><b>Definition:</b> <a href="klient_8cpp_source.html#l00036">klient.cpp:36</a></div></div>
+<div class="ttc" id="aPort_8hh_html_a614217d263be1fb1a5f76e2ff7be19a2"><div class="ttname"><a href="Port_8hh.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a></div><div class="ttdeci">#define PORT</div><div class="ttdoc">Port poprzez który realizowana jest komunikacja z klientem.</div><div class="ttdef"><b>Definition:</b> <a href="Port_8hh_source.html#l00011">Port.hh:11</a></div></div>
+<div class="ttc" id="aclassSender_html"><div class="ttname"><a href="classSender.html">Sender</a></div><div class="ttdoc">Modeluje nadajnik poleceń odzwierciedlających aktualny stan sceny.</div><div class="ttdef"><b>Definition:</b> <a href="klient_8hh_source.html#l00035">klient.hh:35</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="klient_8cpp.html">klient.cpp</a></li>
-    <li class="footer">Wygenerowano Śr, 24 lis 2021 11:10:51 dla Interpreter programem
+    <li class="footer">Wygenerowano Wt, 7 gru 2021 15:07:01 dla Interpreter programem
     <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
 </div>
 </body>

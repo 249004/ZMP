@@ -31,6 +31,8 @@ void Fun_CommunicationThread(Sender  *pSender)
   pSender->Watching_and_Sending();
 }
 
+Sender::Sender(int Socket, Scena *pScn): _Socket(Socket), _pScn(pScn){this->client_thread = std::thread(Fun_CommunicationThread,this);}
+
 bool OpenConnection(int &rSocket)
 {
   struct sockaddr_in  DaneAdSerw;

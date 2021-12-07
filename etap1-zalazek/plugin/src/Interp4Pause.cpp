@@ -56,12 +56,11 @@ const char* Interp4Pause::GetCmdName() const
 /*! \brief Funkcja odpowiadająca za wykonywanie polecenia.
  *
  */
-bool Interp4Pause::ExecCmd( MobileObj  *pMobObj,  int Socket) const //AccessControl *pAccCtrl 
+bool Interp4Pause::ExecCmd( MobileObj  *pMobObj, AccessControl *pAccCtrl ) const //AccessControl *pAccCtrl 
 {
-  /*
   pAccCtrl->LockAccess();
   usleep(delay*1000);
-  pAccCtrl->UnlockAccess();*/
+  pAccCtrl->UnlockAccess();
 
   return true;
 }

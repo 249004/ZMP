@@ -69,14 +69,14 @@ class MobileObj
         * Pozwala na zmianę lokalizacji układu współrzednych obiektu, który domyślnie 
         * znajduje się w ich geometrycznym środku.
         */
-       Vector3D Shift;
+       Vector3D _Shift;
 
         /*!
         * \brief Wektor, który zawiera współczynniki skali względem poszczególnych osi
         *
         * Wartości te nie mogą być ujemne.
         */
-       Vector3D Scale;
+       Vector3D _Scale;
 
         /*!
         * \brief Zmienna przetrzymująca informacje o kolorze obiektu.
@@ -134,7 +134,7 @@ public:
        * w trybie tylko do odczytu.
        * Domyślnie przyjmuje się, że jest to geometryczny środek bryły.
        */
-        const Vector3D &GetPositoin_m() const { return _Position_m; }
+        const Vector3D &GetPosition_m() const { return _Position_m; }
         /*!
        * \brief Udostępnia współrzędne położenia obiektu w trybie modyfikacji.
        *
@@ -167,10 +167,9 @@ public:
         */
         const std::string &GetName() const { return _Name; }
 
-                /*!
-         * \brief Zwraca informację o stanie obiektu
+        /*!
+         * \brief Funkcja zwracająca informację o stanie obiektu
          * 
-         * \return ciag znaków zawierający informacje o obiekcie.
          */
         std::string ActualPosition()
         {
@@ -183,44 +182,42 @@ public:
 
         std::string returnParameters()
         {
-                std::string info = "AddObj";
                 char buff[200];
-                int len = sprintf(buff, " Name=%s RGB=(%d,%d,%d) Scale=(%f,%f,%f) Shift=(%f,%f,%f) RotXYZ_deg=(%f,%f,%f), Trans_m=(%f,%f,%f)\n",
-                this->_Name.c_str(), this->Color[0], this->Color[1], this->Color[2],this->Scale[0],this->Scale[1],this->Scale[2],
-                this->Shift[0],this->Shift[1],this->Shift[2],this->_Ang_Roll_deg,this->_Ang_Pitch_deg,this->_Ang_Yaw_deg,this->_Position_m[0], this->_Position_m[1],this->_Position_m[2]);
+                int len = sprintf(buff, "Name=%s RGB=(%d,%d,%d) Scale=(%f,%f,%f) Shift=(%f,%f,%f) RotXYZ_deg=(%f,%f,%f) Trans_m=(%f,%f,%f)\n",
+                this->_Name.c_str(), this->Color[0], this->Color[1], this->Color[2],this->_Scale[0],this->_Scale[1],this->_Scale[2],
+                this->_Shift[0],this->_Shift[1],this->_Shift[2],this->_Ang_Roll_deg,this->_Ang_Pitch_deg,this->_Ang_Yaw_deg,this->_Position_m[0], this->_Position_m[1],this->_Position_m[2]);
                 std::string result(buff, len);
-                info = info+result;
-                return info;          
+  
+                return result; 
         }
 
        /*!
        * \brief Zmienia parametr T_shift obiektu.
        *
        *  Zmienia lokalizację układu współrzędnych obiektu.
-       *  \param Shift - nowy parametr obiektu
+       *  \param[in] Shift - nowy parametr obiektu
        */
         void SetShift(const Vector3D &Shift)
         {
-                this->Shift = Shift;
+                _Shift = Shift;
         }
-
 
        /*!
        * \brief Zmienia skalę.
        *
        *  Zmienia współczynniki skali względem poszczególnych osi.
-       *  \param Scale - nowa skala
+       *  \param[in] Scale - nowa skala
        */
         void SetScale(const Vector3D &Scale)
         {
-                this->Scale = Scale;
+                _Scale = Scale;
         }
 
        /*!
        * \brief Zmienia kolor obiektu.
        *
        *  Zadaje kolor obiektu we współrzędnych RGB.
-       *  \param RGB - nowy kolor obiektu
+       *  \param[in] RGB - nowy kolor obiektu
        */
         void SetColor(const std::string RGB)
         {

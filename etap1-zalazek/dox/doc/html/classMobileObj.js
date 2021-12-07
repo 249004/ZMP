@@ -1,11 +1,11 @@
 var classMobileObj =
 [
     [ "ActualPosition", "classMobileObj.html#acf6f92f9b60d3f574187b2c4c92cef15", null ],
-    [ "GetAng_Pitch_deg", "classMobileObj.html#a4326367c37e20c9f00b2ac48d9221a57", null ],
-    [ "GetAng_Roll_deg", "classMobileObj.html#a525466e46fbe8d9478ea1b4e04675810", null ],
-    [ "GetAng_Yaw_deg", "classMobileObj.html#a761726066b8446efa93b8826356a6769", null ],
-    [ "GetName", "classMobileObj.html#a5a89aab2fef38e5d8f5e05c0d0d88b8b", null ],
-    [ "GetPositoin_m", "classMobileObj.html#a11ea652d5d8617899cba48a19220803d", null ],
+    [ "GetAng_Pitch_deg", "classMobileObj.html#a02fee3485623a6e6ae2f0eba20f233e0", null ],
+    [ "GetAng_Roll_deg", "classMobileObj.html#a8f2c805c7522d2b0cde36327c82ff64a", null ],
+    [ "GetAng_Yaw_deg", "classMobileObj.html#a5b8b5c669a5826ddc77f66aa918a3376", null ],
+    [ "GetName", "classMobileObj.html#a36ca729d6558a3c14f3420d7a4fc2510", null ],
+    [ "GetPosition_m", "classMobileObj.html#a8ae13ddee80cd97017c9a236cac5c284", null ],
     [ "returnParameters", "classMobileObj.html#af0458e89939c9ffae5205c049dc9bc5d", null ],
     [ "SetAng_Pitch_deg", "classMobileObj.html#ad06c4b0a90be9fcc10c115d46dc288e5", null ],
     [ "SetAng_Roll_deg", "classMobileObj.html#a7a496924b3ee3576b4791436546c0728", null ],
@@ -21,7 +21,7 @@ var classMobileObj =
     [ "_Ang_Yaw_deg", "classMobileObj.html#a1673fecf543fe06217e94ba38ad082d2", null ],
     [ "_Name", "classMobileObj.html#a3e2fb1a559b20e22341232e24ea51eb2", null ],
     [ "_Position_m", "classMobileObj.html#a94d42d218f1db1602be5032c4255fe0a", null ],
-    [ "Color", "classMobileObj.html#a9fbaed9bd5aa1c37215ff5728003dc49", null ],
-    [ "Scale", "classMobileObj.html#a2174c212d60bad8ca1b247c9a89f720b", null ],
-    [ "Shift", "classMobileObj.html#a8bd3c8519006437904db367c73791704", null ]
+    [ "_Scale", "classMobileObj.html#a7526e57c229364a36fc0352bf8afa221", null ],
+    [ "_Shift", "classMobileObj.html#a03f83689c46512952768ba44cb850b06", null ],
+    [ "Color", "classMobileObj.html#a9fbaed9bd5aa1c37215ff5728003dc49", null ]
 ];

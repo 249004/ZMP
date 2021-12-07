@@ -1,3 +1,4 @@
 <map id="AccessControl" name="AccessControl">
-<area shape="rect" id="node2" href="$classScena.html" title="Scena" alt="" coords="29,80,87,107"/>
+<area shape="rect" id="node1" title="Przechowuje informacje o zmianie." alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node2" href="$classScena.html" title=" " alt="" coords="29,80,88,107"/>
 </map>

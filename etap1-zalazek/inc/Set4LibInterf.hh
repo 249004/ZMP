@@ -1,5 +1,5 @@
-#ifndef SET4LIBINTERFACES_HH
-#define SET4LIBINTERFACES_HH
+#ifndef SET4LIBINTERF_HH
+#define SET4LIBINTERF_HH
 
 #include <sstream>
 #include <memory>
@@ -20,17 +20,27 @@ using namespace std;
  */
 class Set4LibInterf
 {
-private:
-  
-    map<string, LibInterf*> Lib_list;
-    Scena *scena;
 
+  /*! \brief Lista komend.
+   *  
+   */
+  map<string, LibInterf*> Lib_list;
+
+  /*! \brief Wsakźnik na obiekt klasy Scena.
+   *  
+   */
+  Scena *scena;
+  
 public:
  
+  /*! \brief Konstruktor klasy Set4LibInterf.
+  *  
+  */
   Set4LibInterf(map<string, MobileObj*> &Obj_list);
+  
   ~Set4LibInterf();
 
-  /*! \brief Dodawanie biblioteki 
+  /*! \brief Dodawanie biblioteki.
   *  
   */
   void add_library(string path);

@@ -25,18 +25,25 @@ class Scena : public AccessControl
 
 public:
 
+    Scena();
+
+    /*! \brief Konstruktor klasy Scena.
+     *  
+     */
     Scena(map<string, MobileObj*> &mob_obj);
+
+    /*! \brief Destruktor klasy Scena.
+     *  
+     */
     ~Scena();
 
     /*! \brief Funkcja wyszukująca obiekt.
      *  
-     * \param pMobObj nazwa szukanego obiektu
      */
-   MobileObj* FindMobileObj(string pMobObj);
+    MobileObj* FindMobileObj(string pMobObj);
 
     /*! \brief Funkcja dodająca obiekt.
      *  
-     * \param pMobObj nazwa dodawanego obiektu
      */
     void AddMobileObj(string pMobObj);
     
@@ -52,6 +59,5 @@ public:
    
     
 };
-
 
 

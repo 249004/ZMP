@@ -10,28 +10,16 @@
 
 
 /*!
- * \brief Przechowuje deskryptor gniazda
+ * \brief Przechowuje informacje o zmianie
  *
- *  Przechowuje deskryptor gniazda wraz z obiektem klasy std::mutex,
- *  który powinien być wykorzystany nadzorca wyłącznego dostępu
- *  do sceny oraz gniazda połączenia sieciowego z serwerem.
+ *  Przechowuje informacje o zmianie z zabezpieczeniem
+ *  wielowątkowej modyfikacji.
  */
 class AccessControl {
    /*!
     * \brief Zapewnia wyłączny dostęp do obiektu w trakcie modyfikacji.
     */
-    std::mutex   _Guard;
-
-    /*!
-    * \brief Przechowuje deskryptor pliku skojarzonym z połączeniem
-    *        sieciowym z serwerem.
-    *
-    * Przechowuje deskryptor pliku skojarzonym z połączeniem
-    * sieciowym z serwerem.
-    * Wartość poprawnego deskrytora musi być różna od 0.
-    */ 
-    int         _Socket = 0;
-
+    std::mutex   _InternalGuard;
    /*!
     * \brief Przechowuje informacje o zmianie.
     *
@@ -44,16 +32,6 @@ class AccessControl {
     */
     std::mutex  _ExternalGuard;
  public:
-
-   /*!
-   * \brief Udostępnia deskryptor pliku skojarzonego z połączeniem
-   *        sieciowym z serwerem.
-   *
-   *  Udostępnia deskryptor skojarzonego z połączeniem sieciowym z serwerem.
-   * \return Deskryptor pliku.
-   */
-   int GetSocket() const { return _Socket; }
-   
   /*!
    * \brief Dostęp do informacji o zmianie.
    *
@@ -65,11 +43,11 @@ class AccessControl {
   /*!
    * \brief Zaznaczenie, że zmiana nastąpiła.
    */
-   void MarkChange() { _Guard.lock();  _Changed = true;  _Guard.unlock(); }
+   void MarkChange() { _InternalGuard.lock();  _Changed = true;  _InternalGuard.unlock(); }
   /*!
    * \brief Skasowanie informacji, że zmiana nastąpiła.
    */
-   void CancelChange() { _Guard.lock();  _Changed = false;  _Guard.unlock(); }
+   void CancelChange() { _InternalGuard.lock();  _Changed = false;  _InternalGuard.unlock(); }
   /*!
    * \brief Zamyka dostęp całej sceny.
    */

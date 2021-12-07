@@ -3,7 +3,7 @@
 /*! \brief Konstruktor klasy LibInterf
  *   
  * Odbywa się załadowanie biblioteki na podstawie podanej ścieżki.
- * \param path ścieżka do biblioteki
+ * \param[in] path ścieżka do biblioteki
  */
 LibInterf::LibInterf(string path)
 {
@@ -13,14 +13,18 @@ LibInterf::LibInterf(string path)
 
     void *new_command = dlsym(handler, "CreateCmd");
     if (!new_command) 
-        cerr << "Nie znaleziono funkcji CreateCmd!" << endl;
+        cerr << "Funkcja CreateCmd nie zostala znaleziona!" << endl;
 
-    create_cmd = reinterpret_cast<Interp4Command* (*)(void)>(new_command); 
+    create_cmd = *reinterpret_cast<Interp4Command* (*)(void)>(new_command); 
     Interp4Command* command = create_cmd();
     library_name = command->GetCmdName();
     delete command;
 }
 
+/*! \brief Destruktor klasy LibInterf
+ *   
+ * Zamyka bibliotekę.
+ */
 LibInterf::~LibInterf()
 {
     dlclose(handler);

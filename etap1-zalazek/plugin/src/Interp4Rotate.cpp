@@ -56,28 +56,31 @@ const char* Interp4Rotate::GetCmdName() const
 /*! \brief Funkcja odpowiadająca za wykonywanie polecenia.
  *
  */
-bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj, int Socket) const //AccessControl *pAccCtrl 
+bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj, AccessControl *pAccCtrl ) const //AccessControl *pAccCtrl 
 {
-  /*
-  char Axis = this->AxisName.at(1);
+  char Axis = this->axis.at(0);
   double AngleRPY;
-  int Dir = this->ang_speed > 0 ? 1 : -1;
-  double NewPoint = AngleRPY + this->rotation_angle * Dir;
   
   switch (Axis)
   {
     case 'X':
       AngleRPY = pMobObj->GetAng_Roll_deg();
+
       break;
 
     case 'Y':
       AngleRPY = pMobObj->GetAng_Pitch_deg();
+
       break;
 
     case 'Z':
       AngleRPY = pMobObj->GetAng_Yaw_deg();
+
       break;
   }
+
+  int Dir = this->ang_speed > 0 ? 1 : -1;
+  double NewPoint = AngleRPY + this->rot_angle * Dir;
 
   while (NewPoint != AngleRPY)
   {
@@ -99,21 +102,25 @@ bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj, int Socket) const //AccessCont
     {
     case 'X':
       pMobObj->SetAng_Roll_deg(AngleRPY);
+
       break;
 
     case 'Y':
       pMobObj->SetAng_Pitch_deg(AngleRPY);
+
       break;
 
     case 'Z':
       pMobObj->SetAng_Yaw_deg(AngleRPY);
+
       break;
     }
 
     pAccCtrl->MarkChange();
     pAccCtrl->UnlockAccess();
     usleep(100000);
-  }*/
+  }
+  cout << "Wykonano!";
   
   return true;
 }

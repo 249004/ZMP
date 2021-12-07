@@ -1,31 +1,38 @@
-warning: ignoring unsupported tag `TOC_INCLUDE_HEADINGS   =' at line 313, file Doxyfile
-warning: ignoring unsupported tag `PLANTUML_CFG_FILE      =' at line 2422, file Doxyfile
+warning: Tag 'PERL_PATH' at line 2166 of file 'Doxyfile' has become obsolete.
+         To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+warning: Tag 'MSCGEN_PATH' at line 2188 of file 'Doxyfile' has become obsolete.
+         To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
 warning: doxygen no longer ships with the FreeSans font.
 You may want to clear or change DOT_FONTNAME.
 Otherwise you run the risk that the wrong font is being used for dot generated graphs.
 warning: The selected output language "polish" has not been updated
 since release 1.8.2.  As a result some sentences may appear in English.
 
-/home/kbargiel/Dokumenty/sem7/ZMP/1/etap1-zalazek/inc/klient.hh:121: warning: argument 'rSender' of command @param is not found in the argument list of Fun_CommunicationThread(Sender *pSender)
-/home/kbargiel/Dokumenty/sem7/ZMP/1/etap1-zalazek/src/klient.cpp:29: warning: The following parameters of Fun_CommunicationThread(Sender *pSender) are not documented:
+/home/kbargiel/ZMP/lab2/etap1-zalazek/inc/klient.hh:125: warning: argument 'rSender' of command @param is not found in the argument list of Fun_CommunicationThread(Sender *pSender)
+/home/kbargiel/ZMP/lab2/etap1-zalazek/src/klient.cpp:29: warning: The following parameter of Fun_CommunicationThread(Sender *pSender) is not documented:
   parameter 'pSender'
-/home/kbargiel/Dokumenty/sem7/ZMP/1/etap1-zalazek/inc/klient.hh:121: warning: argument 'rSender' of command @param is not found in the argument list of Fun_CommunicationThread(Sender *pSender)
-/home/kbargiel/Dokumenty/sem7/ZMP/1/etap1-zalazek/inc/klient.hh:128: warning: The following parameters of Fun_CommunicationThread(Sender *pSender) are not documented:
+/home/kbargiel/ZMP/lab2/etap1-zalazek/inc/klient.hh:125: warning: argument 'rSender' of command @param is not found in the argument list of Fun_CommunicationThread(Sender *pSender)
+/home/kbargiel/ZMP/lab2/etap1-zalazek/inc/klient.hh:133: warning: The following parameter of Fun_CommunicationThread(Sender *pSender) is not documented:
   parameter 'pSender'
-/home/kbargiel/Dokumenty/sem7/ZMP/1/etap1-zalazek/src/xmlinterp.cpp:353: warning: argument 'sFileName' of command @param is not found in the argument list of ReadFile(const char *filename, Configuration &config)
-/home/kbargiel/Dokumenty/sem7/ZMP/1/etap1-zalazek/src/xmlinterp.cpp:353: warning: argument 'CmdList' of command @param is not found in the argument list of ReadFile(const char *filename, Configuration &config)
-/home/kbargiel/Dokumenty/sem7/ZMP/1/etap1-zalazek/src/xmlinterp.cpp:353: warning: argument 'sFileName' of command @param is not found in the argument list of ReadFile(const char *filename, Configuration &config)
-/home/kbargiel/Dokumenty/sem7/ZMP/1/etap1-zalazek/src/xmlinterp.cpp:353: warning: argument 'CmdList' of command @param is not found in the argument list of ReadFile(const char *filename, Configuration &config)
-/home/kbargiel/Dokumenty/sem7/ZMP/1/etap1-zalazek/src/xmlinterp.cpp:361: warning: The following parameters of ReadFile(const char *filename, Configuration &config) are not documented:
+/home/kbargiel/ZMP/lab2/etap1-zalazek/inc/klient.hh:26: warning: argument 'Sk2Server' from the argument list of Send has multiple @param documentation sections
+/home/kbargiel/ZMP/lab2/etap1-zalazek/inc/klient.hh:26: warning: argument 'sMesg' from the argument list of Send has multiple @param documentation sections
+/home/kbargiel/ZMP/lab2/etap1-zalazek/src/xmlinterp.cpp:352: warning: argument 'sFileName' of command @param is not found in the argument list of ReadFile(const char *filename, Configuration &config)
+/home/kbargiel/ZMP/lab2/etap1-zalazek/src/xmlinterp.cpp:352: warning: argument 'CmdList' of command @param is not found in the argument list of ReadFile(const char *filename, Configuration &config)
+/home/kbargiel/ZMP/lab2/etap1-zalazek/src/xmlinterp.cpp:352: warning: argument 'sFileName' of command @param is not found in the argument list of ReadFile(const char *filename, Configuration &config)
+/home/kbargiel/ZMP/lab2/etap1-zalazek/src/xmlinterp.cpp:352: warning: argument 'CmdList' of command @param is not found in the argument list of ReadFile(const char *filename, Configuration &config)
+/home/kbargiel/ZMP/lab2/etap1-zalazek/src/xmlinterp.cpp:360: warning: return value 'true' of ReadFile has multiple documentation sections
+/home/kbargiel/ZMP/lab2/etap1-zalazek/src/xmlinterp.cpp:360: warning: return value 'false' of ReadFile has multiple documentation sections
+/home/kbargiel/ZMP/lab2/etap1-zalazek/src/xmlinterp.cpp:360: warning: The following parameters of ReadFile(const char *filename, Configuration &config) are not documented:
   parameter 'filename'
   parameter 'config'
-/home/kbargiel/Dokumenty/sem7/ZMP/1/etap1-zalazek/src/xmlinterp.cpp:353: warning: argument 'sFileName' of command @param is not found in the argument list of ReadFile(const char *filename, Configuration &config)
-/home/kbargiel/Dokumenty/sem7/ZMP/1/etap1-zalazek/src/xmlinterp.cpp:353: warning: argument 'CmdList' of command @param is not found in the argument list of ReadFile(const char *filename, Configuration &config)
-/home/kbargiel/Dokumenty/sem7/ZMP/1/etap1-zalazek/src/xmlinterp.cpp:353: warning: argument 'sFileName' of command @param is not found in the argument list of ReadFile(const char *filename, Configuration &config)
-/home/kbargiel/Dokumenty/sem7/ZMP/1/etap1-zalazek/src/xmlinterp.cpp:353: warning: argument 'CmdList' of command @param is not found in the argument list of ReadFile(const char *filename, Configuration &config)
-/home/kbargiel/Dokumenty/sem7/ZMP/1/etap1-zalazek/inc/xmlinterp.hh:92: warning: The following parameters of ReadFile(const char *filename, Configuration &config) are not documented:
+/home/kbargiel/ZMP/lab2/etap1-zalazek/src/xmlinterp.cpp:352: warning: argument 'sFileName' of command @param is not found in the argument list of ReadFile(const char *filename, Configuration &config)
+/home/kbargiel/ZMP/lab2/etap1-zalazek/src/xmlinterp.cpp:352: warning: argument 'CmdList' of command @param is not found in the argument list of ReadFile(const char *filename, Configuration &config)
+/home/kbargiel/ZMP/lab2/etap1-zalazek/src/xmlinterp.cpp:352: warning: argument 'sFileName' of command @param is not found in the argument list of ReadFile(const char *filename, Configuration &config)
+/home/kbargiel/ZMP/lab2/etap1-zalazek/src/xmlinterp.cpp:352: warning: argument 'CmdList' of command @param is not found in the argument list of ReadFile(const char *filename, Configuration &config)
+/home/kbargiel/ZMP/lab2/etap1-zalazek/inc/xmlinterp.hh:92: warning: return value 'true' of ReadFile has multiple documentation sections
+/home/kbargiel/ZMP/lab2/etap1-zalazek/inc/xmlinterp.hh:92: warning: return value 'false' of ReadFile has multiple documentation sections
+/home/kbargiel/ZMP/lab2/etap1-zalazek/inc/xmlinterp.hh:92: warning: The following parameters of ReadFile(const char *filename, Configuration &config) are not documented:
   parameter 'filename'
   parameter 'config'
-/home/kbargiel/Dokumenty/sem7/ZMP/1/etap1-zalazek/inc/klient.hh:79: warning: argument 'Socket' of command @param is not found in the argument list of Sender::Watching_and_Sending()
-/home/kbargiel/Dokumenty/sem7/ZMP/1/etap1-zalazek/inc/Set4LibInterf.hh:46: warning: The following parameters of Set4LibInterf::ReadCommands(istringstream &Strm_in, int socket) are not documented:
+/home/kbargiel/ZMP/lab2/etap1-zalazek/inc/Set4LibInterf.hh:56: warning: The following parameter of Set4LibInterf::ReadCommands(istringstream &Strm_in, int socket) is not documented:
   parameter 'socket'

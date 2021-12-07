@@ -7,6 +7,7 @@
 #endif
 
 #include "Interp4Command.hh"
+#include "unistd.h"
 
 /*!
  * \file
@@ -26,7 +27,7 @@ class Interp4Set: public Interp4Command {
    *  do przechowywania wartości parametrów danego polecenia.
    *  Ponieżej zdefiniowane jest tylko jedno pole jako przykład.
    */
-  double  x;
+  double x;
   double y;
   double OX;
   double OY;
@@ -52,8 +53,8 @@ class Interp4Set: public Interp4Command {
   /*!
    * \brief Wykonuje polecenie oraz wizualizuje jego realizację
    */
-  virtual bool ExecCmd( MobileObj  *pMobObj, int Socket) const;
-  //virtual bool ExecCmd( MobileObj  *pMobObj, AccessControl *pAccCtrl ) const; 
+  //virtual bool ExecCmd( MobileObj  *pMobObj, int Socket) const;
+  virtual bool ExecCmd( MobileObj  *pMobObj, AccessControl *pAccCtrl ) const; 
   /*!
    * \brief Czyta wartości parametrów danego polecenia
    */

@@ -1,5 +1,5 @@
-#ifndef LIBINTERFACE_HH
-#define LIBINTERFACE_HH
+#ifndef LIBINTERF_HH
+#define LIBINTERF_HH
 #include <string>
 #include <map>
 #include "Interp4Command.hh"
@@ -24,7 +24,14 @@ class LibInterf
 
 public:
 
+    /*! \brief Konstuktor klasy LibInterf
+     *  
+     */
     LibInterf(string path);
+
+    /*! \brief Destruktor klasy LibInterf
+     *  
+     */
     ~LibInterf();
 
     /*! \brief Nazwa biblioteki 
@@ -32,7 +39,7 @@ public:
      */
     string library_name;
 
-    /*! \brief Metoda tworząca obiekt klasy Interp4Command, służacy do modelowania polecenia 
+    /*! \brief Metoda tworząca obiekt klasy Interp4Command, służący do modelowania polecenia.
      *  
      */
     Interp4Command *(*create_cmd)(void);

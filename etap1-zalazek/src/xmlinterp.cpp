@@ -111,7 +111,7 @@ void XMLInterp4Config::ProcessCubeAttrs(const xercesc::Attributes  &rAttrs)
 
  //-----------------------------------------------------------------------------
  // Wyświetlenie nazw atrybutów i ich "wartości"
- //Shift="0 -0.5 0" SizeXYZ="0.5 0.2 0.2" RotXYZ="10 20 0" Trans_m="0.2 0.3 0" RGB="0 128 255"
+ //
  cout << " Atrybuty:" << endl
       << "     " << sName_Name << " = \"" << sValue_Name << "\"" << endl
       << "     " << sName_Shift << " = \"" << sValue_Shift << "\"" << endl
@@ -133,14 +133,13 @@ void XMLInterp4Config::ProcessCubeAttrs(const xercesc::Attributes  &rAttrs)
  //
  // IStrm >> Scale;
  //
- istringstream   IStrm,IStrm1,IStrm2,IStrm3;
+ istringstream   IStrm, IStrm1, IStrm2, IStrm3;
  
  IStrm.str(sValue_Scale);
  IStrm1.str(sValue_Shift);
  IStrm2.str(sValue_Trans);
  IStrm3.str(sValue_RotXYZ);
- Vector3D Scale,Shift,Trans,RotXYZ;
-
+ Vector3D Scale, Shift, Trans, RotXYZ;
 
  IStrm  >> Scale[0] >> Scale[1] >> Scale[2];
  IStrm1 >> Shift[0] >> Shift[1] >> Shift[2];
@@ -389,7 +388,9 @@ bool ReadFile(const char* filename, Configuration &config)
 
   try 
   {
-    if (!parser->loadGrammar("config/config.xsd", xercesc::Grammar::SchemaGrammarType, true)) 
+    bool status = parser->loadGrammar("config/config.xsd", xercesc::Grammar::SchemaGrammarType, true);
+
+    if (false == status) 
     {
       std::cerr << "Plik grammar/actions.xsd, ktory zawiera opis gramatyki, nie moze zostac wczytany." << std::endl;
       return false;
@@ -401,25 +402,25 @@ bool ReadFile(const char* filename, Configuration &config)
 
   catch (const xercesc::XMLException& exception) 
   {
-    char* sMessage = xercesc::XMLString::transcode(exception.getMessage());
-    std::cerr << "Informacja o wyjatku: \n" << "   " << sMessage << "\n";
-    xercesc::XMLString::release(&sMessage);
+    char* message = xercesc::XMLString::transcode(exception.getMessage());
+    std::cerr << "Informacja o wyjatku: \n" << "   " << message << "\n";
+    xercesc::XMLString::release(&message);
     return false;
   }
 
   catch (const xercesc::SAXParseException& exception) 
   {
-    char* sMessage = xercesc::XMLString::transcode(exception.getMessage());
+    char* message = xercesc::XMLString::transcode(exception.getMessage());
     char* file = xercesc::XMLString::transcode(exception.getSystemId());
 
     std::cerr << "Blad! " << std::endl
     << "    Plik:  " << file << std::endl
     << "   Linia: " << exception.getLineNumber() << std::endl
     << " Kolumna: " << exception.getColumnNumber() << std::endl
-    << " Informacja: " << sMessage 
+    << " Informacja: " << message 
     << std::endl;
 
-    xercesc::XMLString::release(&sMessage);
+    xercesc::XMLString::release(&message);
     xercesc::XMLString::release(&file);
     return false;
   }

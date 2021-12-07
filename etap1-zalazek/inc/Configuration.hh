@@ -51,7 +51,7 @@ class Configuration {
  /*! \brief Metoda zwracająca biblioteki, które są dostępne jako mapa.
   * 
   */
-  map<string, MobileObj*> & GetObj_list() {return this->ObjectsList;}
+  map<string, MobileObj*> & GetObject_list() {return this->ObjectsList;}
 
 };
 

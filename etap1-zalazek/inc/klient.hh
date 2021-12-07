@@ -51,13 +51,21 @@ class Sender {
    */
    Scena          *_pScn = nullptr;
 
-  
+   thread client_thread;
+
  public:
   /*!
    * \brief Inicjalizuje obiekt deskryptorem gniazda i wskaźnikiem
    *        na scenę, na zmianę stanu które będzie ten obiekt reagował.
    */
-   Sender(int Socket, Scena *pScn): _Socket(Socket), _pScn(pScn) {}
+   Sender(int Socket, Scena *pScn);
+
+   ~Sender() {
+      this->CancelCountinueLooping();
+      this->client_thread.join();
+
+      close(_Socket);
+  }
 
   /*!
    * \brief Sprawdza, czy pętla wątku może być wykonywana.
@@ -87,32 +95,29 @@ class Sender {
      while (ShouldCountinueLooping()) {
        if (!_pScn->IsChanged())  { usleep(10000); continue; }
        _pScn->LockAccess();
-       
-        Send(_Socket,"Clear\n"); //potrzebne by usunąć poprzednie obiekty
 
+       map<string, MobileObj *> Objects = _pScn->GetObj_list();
        vector<MobileObj*> objects_list;
        map<string, MobileObj*>::iterator Iter;
 
-    for(Iter = this->_pScn->GetObj_list().begin(); Iter != this->_pScn->GetObj_list().end(); Iter++)
-    {
+      for (Iter = Objects.begin(); Iter != Objects.end(); Iter++)
+      {
         objects_list.push_back(Iter->second);
-    }
+      }
 
+      for (MobileObj* object_ptr : objects_list)
+      {
+        string info = "UpdateObj ";
+        info += object_ptr->returnParameters();
 
-    for (MobileObj* object_ptr : objects_list)
-    {
-      MobileObj* object = object_ptr;
+        Send(_Socket, info.c_str());
+      }
 
-      string info = "UpdateObj";
-      info += object->ActualPosition();
-  
-           Send(_Socket, info.c_str());     
-       }
-       Send(_Socket,"Display\n"); 
+      _pScn->CancelChange();
+      _pScn->UnlockAccess();
 
-       _pScn->CancelChange();
-       _pScn->UnlockAccess();
      }
+     
    }
   
 };
