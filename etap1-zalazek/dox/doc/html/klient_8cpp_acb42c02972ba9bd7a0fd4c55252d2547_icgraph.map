@@ -1,4 +1,6 @@
 <map id="close" name="close">
-<area shape="rect" id="node1" title=" " alt="" coords="171,5,224,32"/>
-<area shape="rect" id="node2" href="$classSender.html#a99dd9c6aa7d546320d619aca9067fdc6" title=" " alt="" coords="5,5,123,32"/>
+<area shape="rect" id="node2" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego. " alt="" coords="105,5,256,47"/>
+<area shape="rect" id="node5" href="$classSender.html#a99dd9c6aa7d546320d619aca9067fdc6" title="Sender::~Sender" alt="" coords="122,71,239,98"/>
+<area shape="rect" id="node3" href="$klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9" title="Funkcja jest treścią wątku komunikacyjnego. " alt="" coords="304,13,485,39"/>
+<area shape="rect" id="node4" href="$classSender.html#ae73443655147c48bc75b4ec1afb2a2d2" title="Inicjalizuje obiekt deskryptorem gniazda i wskaźnikiem na scenę, na zmianę stanu które będzie ten obi..." alt="" coords="533,13,644,39"/>
 </map>

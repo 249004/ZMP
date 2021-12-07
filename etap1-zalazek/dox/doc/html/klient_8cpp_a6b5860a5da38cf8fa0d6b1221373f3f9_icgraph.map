@@ -1,4 +1,4 @@
 <map id="Fun_CommunicationThread" name="Fun_CommunicationThread">
-<area shape="rect" id="node1" title="Funkcja jest treścią wątku komunikacyjnego." alt="" coords="164,5,345,32"/>
-<area shape="rect" id="node2" href="$classSender.html#ae73443655147c48bc75b4ec1afb2a2d2" title="Inicjalizuje obiekt deskryptorem gniazda i wskaźnikiem na scenę, na zmianę stanu które będzie ten obi..." alt="" coords="5,5,116,32"/>
+<area shape="rect" id="node2" href="$classSender.html#ae73443655147c48bc75b4ec1afb2a2d2" title="Inicjalizuje obiekt deskryptorem gniazda i wskaźnikiem na scenę, na zmianę stanu które będzie ten obi..." alt="" coords="255,5,365,32"/>
+<area shape="rect" id="node3" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego. " alt="" coords="235,57,385,98"/>
 </map>

@@ -1,5 +1,4 @@
 <map id="close" name="close">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,59,57"/>
-<area shape="rect" id="node2" href="$classSender.html#a96412f54520d550dd1ea3e9b3bb29786" title="Powoduje przerwanie działania pętli wątku." alt="" coords="107,5,320,32"/>
-<area shape="rect" id="node3" href="$klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis poprzez gniazdo sieciowe." alt="" coords="187,56,239,83"/>
+<area shape="rect" id="node2" href="$classSender.html#a96412f54520d550dd1ea3e9b3bb29786" title="Powoduje przerwanie działania pętli wątku. " alt="" coords="105,5,317,32"/>
+<area shape="rect" id="node3" href="$klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis poprzez gniazdo sieciowe. " alt="" coords="185,56,237,83"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="AccessControl::IsChanged" name="AccessControl::IsChanged">
 <area shape="rect" id="node2" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego. " alt="" coords="225,5,376,47"/>
 <area shape="rect" id="node3" href="$klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9" title="Funkcja jest treścią wątku komunikacyjnego. " alt="" coords="424,13,605,39"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a700a0caa5b70a06d1064e576f9f3cf65" title="main" alt="" coords="653,13,704,39"/>
+<area shape="rect" id="node4" href="$classSender.html#ae73443655147c48bc75b4ec1afb2a2d2" title="Inicjalizuje obiekt deskryptorem gniazda i wskaźnikiem na scenę, na zmianę stanu które będzie ten obi..." alt="" coords="653,13,764,39"/>
 </map>

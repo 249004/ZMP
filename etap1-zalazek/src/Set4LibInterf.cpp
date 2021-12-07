@@ -87,7 +87,7 @@ bool Set4LibInterf::ReadCommands (istringstream &Strm_in, int socket)
 
       if (it == this->Lib_list.end())
       {
-        cerr << "Komenda  " << command_name << "nie została znaleziona." << endl;
+        cerr << "Komenda " << command_name << "nie została znaleziona." << endl;
         flag = false;
       }
         

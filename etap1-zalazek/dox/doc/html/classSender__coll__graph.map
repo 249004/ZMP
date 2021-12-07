@@ -1,5 +1,4 @@
 <map id="Sender" name="Sender">
-<area shape="rect" id="node1" title="Modeluje nadajnik poleceń odzwierciedlających aktualny stan sceny." alt="" coords="27,171,90,197"/>
-<area shape="rect" id="node2" href="$classScena.html" title=" " alt="" coords="29,81,88,108"/>
-<area shape="rect" id="node3" href="$classAccessControl.html" title="Przechowuje informacje o zmianie." alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node2" href="$classScena.html" title="Scena" alt="" coords="29,81,87,108"/>
+<area shape="rect" id="node3" href="$classAccessControl.html" title="Przechowuje informacje o zmianie. " alt="" coords="5,5,111,32"/>
 </map>

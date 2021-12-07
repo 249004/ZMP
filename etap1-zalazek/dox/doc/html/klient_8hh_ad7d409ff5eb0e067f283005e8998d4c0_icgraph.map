@@ -1,10 +1,9 @@
 <map id="Send" name="Send">
-<area shape="rect" id="node1" title="Wysyła napis do poprzez gniazdo sieciowe." alt="" coords="640,56,692,83"/>
-<area shape="rect" id="node2" href="$klient_8cpp.html#acb42c02972ba9bd7a0fd4c55252d2547" title=" " alt="" coords="466,5,519,32"/>
-<area shape="rect" id="node4" href="$classSet4LibInterf.html#a24660c035fa4dbc8d87cba5a82d67f03" title="Funkcja odpowiada za czytanie komend." alt="" coords="393,56,592,83"/>
-<area shape="rect" id="node6" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego." alt="" coords="417,107,568,149"/>
-<area shape="rect" id="node3" href="$classSender.html#a99dd9c6aa7d546320d619aca9067fdc6" title=" " alt="" coords="196,5,313,32"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="229,56,280,83"/>
-<area shape="rect" id="node7" href="$klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9" title="Funkcja jest treścią wątku komunikacyjnego." alt="" coords="164,115,345,141"/>
-<area shape="rect" id="node8" href="$classSender.html#ae73443655147c48bc75b4ec1afb2a2d2" title="Inicjalizuje obiekt deskryptorem gniazda i wskaźnikiem na scenę, na zmianę stanu które będzie ten obi..." alt="" coords="5,115,116,141"/>
+<area shape="rect" id="node2" href="$klient_8cpp.html#acb42c02972ba9bd7a0fd4c55252d2547" title="close" alt="" coords="178,66,230,93"/>
+<area shape="rect" id="node3" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego. " alt="" coords="351,5,501,47"/>
+<area shape="rect" id="node7" href="$classSet4LibInterf.html#a24660c035fa4dbc8d87cba5a82d67f03" title="Funkcja odpowiada za czytanie komend. " alt="" coords="105,118,303,145"/>
+<area shape="rect" id="node6" href="$classSender.html#a99dd9c6aa7d546320d619aca9067fdc6" title="Sender::~Sender" alt="" coords="367,71,485,98"/>
+<area shape="rect" id="node4" href="$klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9" title="Funkcja jest treścią wątku komunikacyjnego. " alt="" coords="549,13,731,39"/>
+<area shape="rect" id="node5" href="$classSender.html#ae73443655147c48bc75b4ec1afb2a2d2" title="Inicjalizuje obiekt deskryptorem gniazda i wskaźnikiem na scenę, na zmianę stanu które będzie ten obi..." alt="" coords="779,13,889,39"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="401,122,451,149"/>
 </map>

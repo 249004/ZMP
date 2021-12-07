@@ -1,4 +1,6 @@
 <map id="OpenConnection" name="OpenConnection">
-<area shape="rect" id="node1" title=" " alt="" coords="104,5,223,32"/>
-<area shape="rect" id="node2" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="222,5,273,32"/>
+<area shape="rect" id="node3" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego. " alt="" coords="172,57,323,98"/>
+<area shape="rect" id="node4" href="$klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9" title="Funkcja jest treścią wątku komunikacyjnego. " alt="" coords="371,64,552,91"/>
+<area shape="rect" id="node5" href="$classSender.html#ae73443655147c48bc75b4ec1afb2a2d2" title="Inicjalizuje obiekt deskryptorem gniazda i wskaźnikiem na scenę, na zmianę stanu które będzie ten obi..." alt="" coords="600,64,711,91"/>
 </map>

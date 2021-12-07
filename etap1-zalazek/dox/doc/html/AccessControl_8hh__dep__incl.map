@@ -1,21 +1,20 @@
 <map id="AccessControl.hh" name="AccessControl.hh">
-<area shape="rect" id="node1" title="Zawiera definicję klasy AccessControl." alt="" coords="716,5,840,32"/>
-<area shape="rect" id="node2" href="$Interp4Command_8hh.html" title="Definicja klasy Interp4Command." alt="" coords="350,80,489,107"/>
-<area shape="rect" id="node16" href="$Scena_8hh.html" title="Scena na której pojawiają się obiekty" alt="" coords="740,80,816,107"/>
-<area shape="rect" id="node17" href="$klient_8hh.html" title=" " alt="" coords="844,155,915,181"/>
-<area shape="rect" id="node3" href="$LibInterf_8hh.html" title="Klasa, która dostarcza opcji dla bibliotek." alt="" coords="575,155,661,181"/>
-<area shape="rect" id="node8" href="$Interp4Move_8hh.html" title="Definicja klasy Interp4Move." alt="" coords="291,155,401,181"/>
-<area shape="rect" id="node10" href="$Interp4Pause_8hh.html" title="Definicja klasy Interp4Pause." alt="" coords="429,155,545,181"/>
-<area shape="rect" id="node12" href="$Interp4Rotate_8hh.html" title="Definicja klasy Interp4Rotate." alt="" coords="17,155,134,181"/>
-<area shape="rect" id="node14" href="$Interp4Set_8hh.html" title="Definicja klasy Interp4Set." alt="" coords="162,155,261,181"/>
-<area shape="rect" id="node4" href="$Set4LibInterf_8hh.html" title="Klasa, która pozwala na uruchomienie preprocesora oraz czytanie komend." alt="" coords="695,229,810,256"/>
-<area shape="rect" id="node7" href="$LibInterf_8cpp.html" title=" " alt="" coords="576,229,671,256"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title=" " alt="" coords="823,304,898,331"/>
-<area shape="rect" id="node6" href="$Set4LibInterf_8cpp.html" title=" " alt="" coords="677,304,799,331"/>
-<area shape="rect" id="node9" href="$Interp4Move_8cpp.html" title=" " alt="" coords="285,229,404,256"/>
-<area shape="rect" id="node11" href="$Interp4Pause_8cpp.html" title=" " alt="" coords="429,229,551,256"/>
-<area shape="rect" id="node13" href="$Interp4Rotate_8cpp.html" title=" " alt="" coords="5,229,129,256"/>
-<area shape="rect" id="node15" href="$Interp4Set_8cpp.html" title=" " alt="" coords="154,229,261,256"/>
-<area shape="rect" id="node19" href="$Scena_8cpp.html" title=" " alt="" coords="737,155,819,181"/>
-<area shape="rect" id="node18" href="$klient_8cpp.html" title=" " alt="" coords="898,229,975,256"/>
+<area shape="rect" id="node2" href="$Interp4Command_8hh.html" title="Definicja klasy Interp4Command. " alt="" coords="345,80,483,107"/>
+<area shape="rect" id="node16" href="$Scena_8hh.html" title="Scena na której pojawiają się obiekty. " alt="" coords="731,80,807,107"/>
+<area shape="rect" id="node17" href="$klient_8hh.html" title="klient.hh" alt="" coords="835,155,905,181"/>
+<area shape="rect" id="node3" href="$LibInterf_8hh.html" title="Klasa, która dostarcza opcji dla bibliotek. " alt="" coords="565,155,652,181"/>
+<area shape="rect" id="node8" href="$Interp4Move_8hh.html" title="Definicja klasy Interp4Move. " alt="" coords="288,155,399,181"/>
+<area shape="rect" id="node10" href="$Interp4Pause_8hh.html" title="Definicja klasy Interp4Pause. " alt="" coords="426,155,541,181"/>
+<area shape="rect" id="node12" href="$Interp4Rotate_8hh.html" title="Definicja klasy Interp4Rotate. " alt="" coords="14,155,131,181"/>
+<area shape="rect" id="node14" href="$Interp4Set_8hh.html" title="Definicja klasy Interp4Set. " alt="" coords="162,155,261,181"/>
+<area shape="rect" id="node4" href="$Set4LibInterf_8hh.html" title="Klasa, która pozwala na uruchomienie preprocesora oraz czytanie komend. " alt="" coords="691,229,804,256"/>
+<area shape="rect" id="node7" href="$LibInterf_8cpp.html" title="LibInterf.cpp" alt="" coords="573,229,666,256"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="main.cpp" alt="" coords="830,304,905,331"/>
+<area shape="rect" id="node6" href="$Set4LibInterf_8cpp.html" title="Set4LibInterf.cpp" alt="" coords="686,304,806,331"/>
+<area shape="rect" id="node9" href="$Interp4Move_8cpp.html" title="Interp4Move.cpp" alt="" coords="285,229,402,256"/>
+<area shape="rect" id="node11" href="$Interp4Pause_8cpp.html" title="Interp4Pause.cpp" alt="" coords="426,229,549,256"/>
+<area shape="rect" id="node13" href="$Interp4Rotate_8cpp.html" title="Interp4Rotate.cpp" alt="" coords="5,229,129,256"/>
+<area shape="rect" id="node15" href="$Interp4Set_8cpp.html" title="Interp4Set.cpp" alt="" coords="154,229,261,256"/>
+<area shape="rect" id="node19" href="$Scena_8cpp.html" title="Scena.cpp" alt="" coords="727,155,810,181"/>
+<area shape="rect" id="node18" href="$klient_8cpp.html" title="klient.cpp" alt="" coords="905,229,982,256"/>
 </map>

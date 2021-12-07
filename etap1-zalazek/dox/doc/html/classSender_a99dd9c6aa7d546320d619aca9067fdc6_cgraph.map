@@ -1,6 +1,5 @@
 <map id="Sender::~Sender" name="Sender::~Sender">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,123,57"/>
-<area shape="rect" id="node2" href="$klient_8hh.html#acb42c02972ba9bd7a0fd4c55252d2547" title=" " alt="" coords="171,31,224,57"/>
-<area shape="rect" id="node3" href="$classSender.html#a96412f54520d550dd1ea3e9b3bb29786" title="Powoduje przerwanie działania pętli wątku." alt="" coords="272,5,485,32"/>
-<area shape="rect" id="node4" href="$klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis poprzez gniazdo sieciowe." alt="" coords="353,56,405,83"/>
+<area shape="rect" id="node2" href="$klient_8hh.html#acb42c02972ba9bd7a0fd4c55252d2547" title="close" alt="" coords="171,31,223,57"/>
+<area shape="rect" id="node3" href="$classSender.html#a96412f54520d550dd1ea3e9b3bb29786" title="Powoduje przerwanie działania pętli wątku. " alt="" coords="271,5,483,32"/>
+<area shape="rect" id="node4" href="$klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis poprzez gniazdo sieciowe. " alt="" coords="351,56,403,83"/>
 </map>

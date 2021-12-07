@@ -1,7 +1,7 @@
 var classAccessControl =
 [
     [ "CancelChange", "classAccessControl.html#ac05a143ff477cee359603872b7642943", null ],
-    [ "IsChanged", "classAccessControl.html#a687d41c24cb496f070915eb7c813f08f", null ],
+    [ "IsChanged", "classAccessControl.html#a1c8683bd869474a670e5d7f56c1e6ed2", null ],
     [ "LockAccess", "classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29", null ],
     [ "MarkChange", "classAccessControl.html#a69f4526ff524e6b37b530f97d0419706", null ],
     [ "UnlockAccess", "classAccessControl.html#aff3de9ca43882da925567c0057618cc5", null ],

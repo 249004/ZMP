@@ -1,8 +1,7 @@
 <map id="Configuration::GetObject_list" name="Configuration::GetObject_list">
-<area shape="rect" id="node1" title="Metoda zwracająca biblioteki, które są dostępne jako mapa." alt="" coords="923,38,1109,65"/>
-<area shape="rect" id="node2" href="$classConfiguration.html#ae81151945f985a10b9fd8c5b0afc7b63" title="Funkcja odpowiadająca za dodawanie nowego obiektu." alt="" coords="728,13,875,39"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="776,63,827,90"/>
-<area shape="rect" id="node3" href="$classXMLInterp4Config.html#a5888326f2d9145908ff308e9aeff795e" title="Analizuje atrybuty i odpwiednio je interpretuje." alt="" coords="500,5,680,47"/>
-<area shape="rect" id="node4" href="$classXMLInterp4Config.html#a5e3c76e68652f288d9bad7ce55493253" title="Wykonuje operacje związane z danym elementem XML." alt="" coords="259,5,452,47"/>
-<area shape="rect" id="node5" href="$classXMLInterp4Config.html#a5588af2dc423d361e688cbad0a3da877" title="Wywoływana jest po napotkaniu nowego elementu XML." alt="" coords="5,13,211,39"/>
+<area shape="rect" id="node2" href="$classConfiguration.html#ae81151945f985a10b9fd8c5b0afc7b63" title="Funkcja odpowiadająca za dodawanie nowego obiektu. " alt="" coords="239,13,385,39"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="287,63,337,90"/>
+<area shape="rect" id="node3" href="$classXMLInterp4Config.html#a5888326f2d9145908ff308e9aeff795e" title="Analizuje atrybuty i odpwiednio je interpretuje. " alt="" coords="433,5,611,47"/>
+<area shape="rect" id="node4" href="$classXMLInterp4Config.html#a5e3c76e68652f288d9bad7ce55493253" title="Wykonuje operacje związane z danym elementem XML. " alt="" coords="659,5,851,47"/>
+<area shape="rect" id="node5" href="$classXMLInterp4Config.html#a5588af2dc423d361e688cbad0a3da877" title="Wywoływana jest po napotkaniu nowego elementu XML. " alt="" coords="899,13,1101,39"/>
 </map>

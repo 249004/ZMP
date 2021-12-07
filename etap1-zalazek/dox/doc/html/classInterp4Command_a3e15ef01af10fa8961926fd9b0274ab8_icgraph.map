@@ -1,5 +1,5 @@
 <map id="Interp4Command::ReadParams" name="Interp4Command::ReadParams">
-<area shape="rect" id="node1" title="Czyta wartości parametrów danego polecenia." alt="" coords="351,5,553,32"/>
-<area shape="rect" id="node2" href="$classSet4LibInterf.html#a24660c035fa4dbc8d87cba5a82d67f03" title="Funkcja odpowiada za czytanie komend." alt="" coords="104,5,303,32"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node2" href="$classSet4LibInterf.html#a24660c035fa4dbc8d87cba5a82d67f03" title="Funkcja odpowiada za czytanie komend. " alt="" coords="255,5,452,32"/>
+<area shape="rect" id="node4" href="$classInterp4Command.html#a620ba28206850d0bce8dbb2364c73366" title="Destruktor wirtualny ze wzgledu na klasy pochodne. " alt="" coords="266,57,441,98"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="500,5,551,32"/>
 </map>

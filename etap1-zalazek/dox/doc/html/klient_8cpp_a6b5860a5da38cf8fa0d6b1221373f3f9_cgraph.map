@@ -1,10 +1,14 @@
 <map id="Fun_CommunicationThread" name="Fun_CommunicationThread">
-<area shape="rect" id="node1" title="Funkcja jest treścią wątku komunikacyjnego." alt="" coords="5,132,187,159"/>
-<area shape="rect" id="node2" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego." alt="" coords="235,125,385,166"/>
-<area shape="rect" id="node3" href="$classAccessControl.html#ac05a143ff477cee359603872b7642943" title="Skasowanie informacji, że zmiana nastąpiła." alt="" coords="434,5,631,32"/>
-<area shape="rect" id="node4" href="$classScena.html#a23dff3fabd949563c99973a6eb2abb40" title="Mapa, w którym są wszystkie wskażniki obiektów znajdujących się na scenie." alt="" coords="467,56,598,83"/>
-<area shape="rect" id="node5" href="$classAccessControl.html#a687d41c24cb496f070915eb7c813f08f" title="Dostęp do informacji o zmianie." alt="" coords="445,107,620,133"/>
-<area shape="rect" id="node6" href="$classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29" title="Zamyka dostęp całej sceny." alt="" coords="439,157,626,184"/>
-<area shape="rect" id="node7" href="$klient_8hh.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis do poprzez gniazdo sieciowe." alt="" coords="507,208,559,235"/>
-<area shape="rect" id="node8" href="$classAccessControl.html#aff3de9ca43882da925567c0057618cc5" title="Otwiera dostęp do całej sceny." alt="" coords="433,259,632,285"/>
+<area shape="rect" id="node2" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego. " alt="" coords="235,226,385,267"/>
+<area shape="rect" id="node3" href="$classAccessControl.html#a1c8683bd869474a670e5d7f56c1e6ed2" title="Dostęp do informacji o zmianie. " alt="" coords="445,5,617,32"/>
+<area shape="rect" id="node4" href="$classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29" title="Zamyka dostęp całej sceny. " alt="" coords="440,56,621,83"/>
+<area shape="rect" id="node5" href="$classScena.html#a23dff3fabd949563c99973a6eb2abb40" title="Mapa, w którym są wszystkie wskażniki obiektów znajdujących się na scenie. " alt="" coords="466,107,595,133"/>
+<area shape="rect" id="node6" href="$klient_8hh.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis do poprzez gniazdo sieciowe. " alt="" coords="505,157,557,184"/>
+<area shape="rect" id="node7" href="$classAccessControl.html#ac05a143ff477cee359603872b7642943" title="Skasowanie informacji, że zmiana nastąpiła. " alt="" coords="433,208,628,235"/>
+<area shape="rect" id="node8" href="$classAccessControl.html#aff3de9ca43882da925567c0057618cc5" title="Otwiera dostęp do całej sceny. " alt="" coords="434,259,627,285"/>
+<area shape="rect" id="node9" href="$klient_8hh.html#a6b5860a5da38cf8fa0d6b1221373f3f9" title="Funkcja jest treścią wątku komunikacyjnego. " alt="" coords="440,309,621,336"/>
+<area shape="rect" id="node10" href="$klient_8hh.html#a49ba9261b2ded960bce23328c431e31d" title="OpenConnection" alt="" coords="471,360,590,387"/>
+<area shape="rect" id="node11" href="$klient_8hh.html#acb42c02972ba9bd7a0fd4c55252d2547" title="close" alt="" coords="505,411,557,437"/>
+<area shape="rect" id="node12" href="$klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis poprzez gniazdo sieciowe. " alt="" coords="756,385,808,412"/>
+<area shape="rect" id="node13" href="$classSender.html#a96412f54520d550dd1ea3e9b3bb29786" title="Powoduje przerwanie działania pętli wątku. " alt="" coords="676,436,888,463"/>
 </map>
